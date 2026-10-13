@@ -3,10 +3,10 @@ import test from 'node:test';
 import fs from 'node:fs/promises';
 
 // Execute the production method without loading Electron's native stores in Node.
-const source = await fs.readFile(
+const source = (await fs.readFile(
   new URL('../electron/main/browserManager.js', import.meta.url),
   'utf8'
-);
+)).replace(/\r\n/g, '\n');
 const start = source.indexOf('\n  async prepareSessionLogout(');
 const end = source.indexOf('\n  }\n', start);
 assert.ok(start >= 0 && end > start);
