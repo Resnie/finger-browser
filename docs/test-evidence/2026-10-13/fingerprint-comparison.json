@@ -1,0 +1,18 @@
+{
+  "mac": {
+    "run": "matrix-darwin-1791829372494",
+    "samples": 45,
+    "uniqueBrowsers": 7,
+    "uniqueSignals": 7,
+    "allLabelsStable": true,
+    "labels": 13
+  },
+  "windows": {
+    "run": "matrix-win32-1791847899220",
+    "samples": 44,
+    "uniqueBrowsers": 7,
+    "uniqueSignals": 7,
+    "allLabelsStable": true,
+    "labels": 12
+  }
+}

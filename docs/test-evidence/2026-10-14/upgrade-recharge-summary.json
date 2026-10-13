@@ -1,0 +1,64 @@
+{
+  "version_prepared": "0.2.1",
+  "release_platforms": [
+    "windows"
+  ],
+  "published": false,
+  "production_backend_deployed": false,
+  "reference_auto_register_modified": false,
+  "recharge_source": "existing main-site desktop/getUserRecharge API",
+  "blockchain_queries_added": false,
+  "new_shared_business_tables": 0,
+  "free_quota_database_configurable": true,
+  "default_free_limits": {
+    "browser": 10,
+    "account": 10
+  },
+  "initial_paid_price_usdt": {
+    "browser": "0.1",
+    "account": "0.1"
+  },
+  "tests": {
+    "backend_regression_pass_events": 583,
+    "client_quality_tests_passed": 260,
+    "client_build": "passed",
+    "shared_mysql_api_scenarios": 5,
+    "shared_mysql_one_connection_recharge": "passed",
+    "ui_billing_configuration": "passed",
+    "ui_recharge": "passed",
+    "ui_recharge_claim_responses": "mocked; main API protocol tested separately with synthetic MySQL",
+    "ui_dialog_small_viewport": "passed",
+    "last_related_backend_checks": "passed after connection-context and configuration changes",
+    "latest_client_build": "passed"
+  },
+  "production_data_rehearsal": {
+    "isolated_mysql_on_server": true,
+    "original_six_table_counts": {
+      "t_apikey": 9228,
+      "t_browser": 83,
+      "t_user": 281,
+      "t_browser_group": 10,
+      "t_group": 320,
+      "t_browser_version": 7
+    },
+    "schema_expansion": "passed in copy",
+    "rsa_preflight": "passed with explicitly authorized preservation of unreadable legacy fields",
+    "production_data_changed": false,
+    "all_original_fields_verified_after_aborted_preflight": true,
+    "unreadable_api_secret_fields_preserved": 7489,
+    "full_original_field_verification": "passed after apply and repeat",
+    "repeat_migration_updates": 0,
+    "backup_restoration_all_original_fields": "passed",
+    "original_rsa_files_unchanged": true
+  },
+  "not_yet_verified": [
+    "production cutover and rollback",
+    "Windows 0.2.0 to 0.2.1 installed update",
+    "new Windows client with live production backend",
+    "real-money recharge settlement"
+  ],
+  "known_issues_recorded": [
+    "Original main-site recharge ignores affected-row counts; user requested documentation only, no repair.",
+    "7489 legacy api_secret fields remain opaque; their originals are unchanged."
+  ]
+}

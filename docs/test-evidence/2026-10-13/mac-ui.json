@@ -1,0 +1,256 @@
+{
+  "evidence": "/var/folders/bf/208ptzms1sl2qysvl8strctm0000gn/T/test-finger-full-ui-WcKuXm",
+  "username": "test-full-ui-mv5lg6b3",
+  "passed": 41,
+  "failed": 0,
+  "results": [
+    {
+      "name": "未登录访问业务路由会回到登录页",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 75
+    },
+    {
+      "name": "登录空表单与长度边界",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 388
+    },
+    {
+      "name": "错误密码保持登录页且可重试",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 535
+    },
+    {
+      "name": "记住密码、回车登录与长用户名",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 3756
+    },
+    {
+      "name": "浏览器分组：空名称拒绝、创建、搜索、编辑、取消删除、详情跳转",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6913
+    },
+    {
+      "name": "账号分组：空名称拒绝、创建、搜索、编辑、取消删除、详情跳转",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 5341
+    },
+    {
+      "name": "账号：空/非法邮箱、缺密码拒绝、取消与重开表单",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6728
+    },
+    {
+      "name": "账号：创建全部资料和云端谷歌密钥，列表不暴露密码",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 1730
+    },
+    {
+      "name": "账号：编辑全部字段、保留谷歌密钥、备注双击保存",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4141
+    },
+    {
+      "name": "账号：谷歌码显示、刷新、复制、关闭",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 3953
+    },
+    {
+      "name": "账号：名称/邮箱搜索与空结果恢复",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2881
+    },
+    {
+      "name": "快速添加：空、坏行、重复去重、已有账号更新",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2366
+    },
+    {
+      "name": "导入导出：真实模板文件、有效/重复/坏文件、取消文件选择",
+      "kind": "real-ui-api-files; native-dialog-selection-controlled",
+      "status": "passed",
+      "ms": 7046
+    },
+    {
+      "name": "账号：邮件展示/刷新、HTML隔离、验证码、实名状态与失败重试",
+      "kind": "ui-with-controlled-mail-ipc; protocol-tested-separately",
+      "status": "passed",
+      "ms": 6877
+    },
+    {
+      "name": "账号：单条修改分组、取消不保存、移回未分组",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6013
+    },
+    {
+      "name": "谷歌密钥：缺失提示、旧本机密钥迁移取消/确认及云端保护",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 8020
+    },
+    {
+      "name": "账号：删除取消、单条删除、未选择批删、批删确认",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 5731
+    },
+    {
+      "name": "浏览器：未选择批量分组/删除、空表单、取消",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 7796
+    },
+    {
+      "name": "浏览器：非法URL、Cookie JSON、代理格式阻止提交",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4225
+    },
+    {
+      "name": "浏览器：创建、关联账号、分组、初始Cookie、全部指纹表单",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 9530
+    },
+    {
+      "name": "浏览器：编辑、备注双击、克隆取消、克隆创建",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6750
+    },
+    {
+      "name": "浏览器：名称搜索、批量分组、单条移回未分组",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6392
+    },
+    {
+      "name": "真实内核：打开、重复点击、指纹和Cookie、重开、关闭恢复",
+      "kind": "real-ui-api-chromium-headless",
+      "status": "passed",
+      "ms": 23405
+    },
+    {
+      "name": "浏览器：历史显示/搜索/清空取消与确认、凭据增改/删除",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6170
+    },
+    {
+      "name": "浏览器：关联账号谷歌码与邮箱验证码快捷入口",
+      "kind": "real-cloud-totp; controlled-mail-ipc",
+      "status": "passed",
+      "ms": 6117
+    },
+    {
+      "name": "代理：真实失效HTTP代理和坏API返回阻止启动，修正后恢复",
+      "kind": "real-ui-api-chromium; local-unreachable-proxy-and-local-bad-api",
+      "status": "passed",
+      "ms": 16402
+    },
+    {
+      "name": "内核：本地列表、空间、刷新、依赖保护、在线搜索与刷新",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 1428
+    },
+    {
+      "name": "内核：真实下载启动、取消与中间文件清理",
+      "kind": "real-ui-public-kernel-download",
+      "status": "passed",
+      "ms": 1944
+    },
+    {
+      "name": "设置：检查更新开发环境提示与重复检查",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2840
+    },
+    {
+      "name": "余额账单：真实余额/免费次数、刷新、无充值入口",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 769
+    },
+    {
+      "name": "余额账单：接口失败提示、按钮恢复、重试成功",
+      "kind": "real-ui; injected-http-failure",
+      "status": "passed",
+      "ms": 131
+    },
+    {
+      "name": "最小桌面尺寸与全部页面导航/刷新",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2436
+    },
+    {
+      "name": "退出登录关闭运行窗口并撤销旧会话，密码安全回填",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 3551
+    },
+    {
+      "name": "客户端重启保持登录与浏览器云端资料",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6089
+    },
+    {
+      "name": "浏览器：单条删除取消、批量删除与本地档案清理",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 1327
+    },
+    {
+      "name": "内核：无依赖内核删除、取消与实际移除",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4632
+    },
+    {
+      "name": "分组：删除账号组只解除关联，删除空窗口组",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4968
+    },
+    {
+      "name": "取消记住密码立即清除，下次重启不回填",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6077
+    },
+    {
+      "name": "登录失效：401清除会话并导航到登录页",
+      "kind": "real-ui; injected-http-401",
+      "status": "passed",
+      "ms": 4063
+    },
+    {
+      "name": "登录失效：HTTP 200 的业务 401 同样清除静默请求会话",
+      "kind": "real-ui; injected-business-401",
+      "status": "passed",
+      "ms": 1516
+    },
+    {
+      "name": "整个操作链没有未捕获渲染异常或业务外部请求",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2342
+    }
+  ],
+  "rendererErrors": [],
+  "unexpectedOrigins": []
+}

@@ -1,0 +1,223 @@
+{
+  "run": "site-ui-final",
+  "samples": [
+    {
+      "run": "site-ui-final",
+      "label": "测试窗口甲",
+      "phase": "manual",
+      "timestamp": "2026-10-12T23:36:22.103Z",
+      "fingerprintId": "4754798f56bb8ed1ab2fed940d78912df7dfdce81dc07aee70f1506332c221a6",
+      "signalId": "fbaf2a91da6d5f492bf3c76312f63fdd51732c4bbfd5712007e67eefee2e75de",
+      "componentHashes": {
+        "canvas": "fb28b3c380d39921cc0b4279124a01348735f00eefa8c95fda77aac4d417c31f",
+        "canvasPixels": "31c0a495caf41f7aba9136953e67332b18ccf9e2733ff08834933e085a1b09f2",
+        "audio": "aa1dc1be43f07c4ca81efc74800889a1a471c1f68705ecaeeb6b95dcf14d14e9",
+        "webgl": "52f1ed398aa677343ccb1691600ea604222fe3827eb92149d58edceaaf989581",
+        "clientRects": "be9f09969a0c684ab5b2799c6c48dc6004e62e4ba06c9874bad046a5fb44e185"
+      },
+      "identity": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+        "platform": "MacIntel",
+        "language": "zh-CN",
+        "languages": [
+          "zh-CN"
+        ],
+        "timezone": "Asia/Shanghai",
+        "screen": [
+          1200,
+          900,
+          24
+        ],
+        "hardwareConcurrency": 8,
+        "deviceMemory": null,
+        "doNotTrack": null,
+        "uaData": null
+      },
+      "checks": {
+        "canvasRepeatStable": true,
+        "iframeIdentity": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "hardwareConcurrency": 8
+        },
+        "iframeCanvasMatches": true,
+        "worker": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "hardwareConcurrency": 8,
+          "pixels": [
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255
+          ]
+        },
+        "moduleWorker": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "hardwareConcurrency": 8,
+          "pixels": [
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255
+          ]
+        },
+        "webdriver": true,
+        "secureContext": false
+      },
+      "request": {
+        "peer": "192.168.50.221",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+        "acceptLanguage": "zh-CN,zh;q=0.9",
+        "proxy": null
+      }
+    },
+    {
+      "run": "site-ui-final",
+      "label": "同一窗口修改标签",
+      "phase": "manual",
+      "timestamp": "2026-10-12T23:36:22.246Z",
+      "fingerprintId": "4754798f56bb8ed1ab2fed940d78912df7dfdce81dc07aee70f1506332c221a6",
+      "signalId": "fbaf2a91da6d5f492bf3c76312f63fdd51732c4bbfd5712007e67eefee2e75de",
+      "componentHashes": {
+        "canvas": "fb28b3c380d39921cc0b4279124a01348735f00eefa8c95fda77aac4d417c31f",
+        "canvasPixels": "31c0a495caf41f7aba9136953e67332b18ccf9e2733ff08834933e085a1b09f2",
+        "audio": "aa1dc1be43f07c4ca81efc74800889a1a471c1f68705ecaeeb6b95dcf14d14e9",
+        "webgl": "52f1ed398aa677343ccb1691600ea604222fe3827eb92149d58edceaaf989581",
+        "clientRects": "be9f09969a0c684ab5b2799c6c48dc6004e62e4ba06c9874bad046a5fb44e185"
+      },
+      "identity": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+        "platform": "MacIntel",
+        "language": "zh-CN",
+        "languages": [
+          "zh-CN"
+        ],
+        "timezone": "Asia/Shanghai",
+        "screen": [
+          1200,
+          900,
+          24
+        ],
+        "hardwareConcurrency": 8,
+        "deviceMemory": null,
+        "doNotTrack": null,
+        "uaData": null
+      },
+      "checks": {
+        "canvasRepeatStable": true,
+        "iframeIdentity": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "hardwareConcurrency": 8
+        },
+        "iframeCanvasMatches": true,
+        "worker": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "hardwareConcurrency": 8,
+          "pixels": [
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255
+          ]
+        },
+        "moduleWorker": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "hardwareConcurrency": 8,
+          "pixels": [
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255,
+            50,
+            100,
+            150,
+            255
+          ]
+        },
+        "webdriver": true,
+        "secureContext": false
+      },
+      "request": {
+        "peer": "192.168.50.221",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/144.0.0.0 Safari/537.36",
+        "acceptLanguage": "zh-CN,zh;q=0.9",
+        "proxy": null
+      }
+    }
+  ],
+  "groups": [
+    {
+      "label": "测试窗口甲",
+      "samples": 1,
+      "fingerprintIds": [
+        "4754798f56bb8ed1ab2fed940d78912df7dfdce81dc07aee70f1506332c221a6"
+      ],
+      "stable": true
+    },
+    {
+      "label": "同一窗口修改标签",
+      "samples": 1,
+      "fingerprintIds": [
+        "4754798f56bb8ed1ab2fed940d78912df7dfdce81dc07aee70f1506332c221a6"
+      ],
+      "stable": true
+    }
+  ],
+  "uniqueBrowsers": 1,
+  "uniqueSignals": 1
+}

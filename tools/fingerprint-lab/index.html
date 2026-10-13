@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>指纹验证实验室</title>
+    <style>
+      :root {
+        font:
+          15px/1.6 system-ui,
+          sans-serif;
+        color: #14243a;
+        background: #eef3f8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 24px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 0 0 12px;
+      }
+      p {
+        color: #53637a;
+      }
+      .tag {
+        color: #157063;
+        background: #d8eee8;
+        border-radius: 20px;
+        padding: 5px 14px;
+        font-size: 12px;
+      }
+      .card {
+        background: white;
+        border: 1px solid #dce4ef;
+        border-radius: 12px;
+        padding: 22px;
+        margin: 20px 0;
+        box-shadow: 0 6px 24px #162d4c06;
+      }
+      .form {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        align-items: end;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        color: #53637a;
+      }
+      input {
+        display: block;
+        padding: 10px;
+        border: 1px solid #bdcbdc;
+        border-radius: 7px;
+        font: inherit;
+        width: 220px;
+        max-width: 100%;
+      }
+      button {
+        border: 0;
+        border-radius: 7px;
+        background: #1d5acb;
+        color: white;
+        padding: 11px 18px;
+        font: inherit;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: wait;
+      }
+      .secondary {
+        background: #eaf0fb;
+        color: #1d5acb;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .metric {
+        padding: 16px;
+        border-radius: 8px;
+        background: #f4f7fb;
+      }
+      .metric b {
+        display: block;
+        font-size: 28px;
+      }
+      code {
+        overflow-wrap: anywhere;
+        color: #2156a3;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 13px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #e5ebf3;
+        padding: 12px 8px;
+      }
+      th {
+        color: #53637a;
+      }
+      .scroll {
+        overflow: auto;
+      }
+      .pass {
+        color: #087d58;
+      }
+      .fail {
+        color: #b53835;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-size: 12px;
+      }
+      #status {
+        min-height: 25px;
+      }
+      @media (max-width: 640px) {
+        main {
+          padding: 20px 12px;
+        }
+        header {
+          display: block;
+        }
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+        input {
+          width: 100%;
+        }
+        .form > * {
+          width: 100%;
+        }
+        h1 {
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>指纹验证实验室</h1>
+          <p>比较真实网页指纹，验证窗口隔离与重开稳定性。</p>
+        </div>
+        <span class="tag">局域网 · 无需登录</span>
+      </header>
+      <section class="card">
+        <div class="form">
+          <div>
+            <label for="run">测试批次</label
+            ><input id="run" value="manual" maxlength="100" pattern="[A-Za-z0-9_-]+" />
+          </div>
+          <div>
+            <label for="label">窗口标签（仅用于对照）</label
+            ><input id="label" placeholder="例如 Mac-140-A" maxlength="100" />
+          </div>
+          <button id="collect">采集并验证</button
+          ><button class="secondary" id="refresh">刷新对照结果</button
+          ><button class="secondary" id="export">导出 JSON</button>
+        </div>
+        <p id="status" role="status">
+          准备采集。请为不同窗口填写不同标签，同一窗口重开时保持标签一致。
+        </p>
+      </section>
+      <section class="metrics">
+        <div class="metric">采样数量<b id="count">0</b></div>
+        <div class="metric">可区分浏览器<b id="unique">0</b></div>
+        <div class="metric">图形与音频指纹数量<b id="signals">0</b></div>
+      </section>
+      <section class="card">
+        <h2>当前浏览器</h2>
+        <p>指纹 ID：<code id="id">等待采集</code></p>
+        <div id="identity"></div>
+        <details>
+          <summary>组件哈希与一致性检查</summary>
+          <pre id="details"></pre>
+        </details>
+      </section>
+      <section class="card">
+        <h2>窗口对照</h2>
+        <p>
+          同一标签的多次采样应保持同一 ID；不同窗口应有不同 ID。标签、Cookie、IP
+          和采样时间不参与指纹计算。
+        </p>
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>窗口标签</th>
+                <th>采样</th>
+                <th>重开稳定</th>
+                <th>指纹 ID</th>
+              </tr>
+            </thead>
+            <tbody id="groups"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>采样记录</h2>
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>窗口 / 阶段</th>
+                <th>内核与系统</th>
+                <th>Canvas</th>
+                <th>Audio</th>
+                <th>代理路由</th>
+              </tr>
+            </thead>
+            <tbody id="samples"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/probe.js"></script>
+    <script src="/lab.js"></script>
+  </body>
+</html>

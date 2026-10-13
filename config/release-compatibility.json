@@ -1,0 +1,18 @@
+{
+  "minimumBackendVersion": "0.2.1",
+  "requiredDatabaseMode": "shared",
+  "requiredCapabilities": [
+    "account-browser-link-v1",
+    "cloud-recovery-v1",
+    "browser-runtime-lease-v1",
+    "google-totp-cloud-v1",
+    "google-totp-migration-v1",
+    "portable-profile-v1",
+    "mail-verification-code-v1",
+    "sensitive-data-keyring-v2",
+    "usdt-create-billing-v1",
+    "database-quota-v1",
+    "shared-user-billing-v1",
+    "bep20-recharge-v1"
+  ]
+}

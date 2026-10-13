@@ -1,0 +1,67 @@
+name: 发布 Windows 客户端
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: dry-run 只检查；release 才构建并上传
+        required: true
+        default: dry-run
+        type: choice
+        options:
+          - dry-run
+          - release
+      version:
+        description: 正式发布时填写已推送的标签，例如 v0.2.1
+        required: false
+        type: string
+
+concurrency:
+  group: desktop-release-${{ inputs.version || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: 发布前检查
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.action == 'release' && inputs.version || github.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: 执行 dry-run
+        run: npm run release -- --platform win
+        env:
+          RELEASE_TAG: ${{ inputs.version }}
+
+  publish:
+    name: 发布 Windows 安装包
+    if: ${{ inputs.action == 'release' }}
+    needs: check
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.version }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: 构建并上传 GitHub Release
+        run: node scripts/release.mjs --release --platform win
+        env:
+          RELEASE_TAG: ${{ inputs.version }}
+          ELECTRON_BUILDER_GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BACKEND_RELEASE_INFO_URL: ${{ vars.BACKEND_RELEASE_INFO_URL || 'https://qt.faayun.com/browser/health' }}
+          ELECTRON_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
+          ELECTRON_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}

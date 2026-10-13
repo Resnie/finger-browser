@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "summary": {
+    "passed": true
+  },
+  "output": "TAP version 13\n# Subtest: Windows long profiles use a short binding, then unlink only the binding\nok 1 - Windows long profiles use a short binding, then unlink only the binding\n  ---\n  duration_ms: 11.5915\n  ...\n# Subtest: retargeted aliases cannot identify processes or remove any profile\nok 2 - retargeted aliases cannot identify processes or remove any profile\n  ---\n  duration_ms: 8.5118\n  ...\n# Subtest: another profile and fabricated aliases cannot reuse a binding\nok 3 - another profile and fabricated aliases cannot reuse a binding\n  ---\n  duration_ms: 4.5163\n  ...\n# Subtest: normal Windows paths and macOS profiles retain their direct paths\nok 4 - normal Windows paths and macOS profiles retain their direct paths\n  ---\n  duration_ms: 2.4582\n  ...\n# Subtest: process matching requires the exact user-data-dir argument\nok 5 - process matching requires the exact user-data-dir argument\n  ---\n  duration_ms: 0.5643\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 96.0788\n"
+}

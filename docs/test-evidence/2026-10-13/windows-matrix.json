@@ -1,0 +1,365 @@
+{
+  "run": "matrix-win32-1791847899220",
+  "platform": "win32",
+  "evidence": "C:\\Users\\ronely\\AppData\\Local\\Temp\\test-finger-matrix-XXXXXXpceSH9",
+  "results": [
+    {
+      "name": "通过实际界面开启自动指纹并保存",
+      "status": "passed"
+    },
+    {
+      "name": "不同内核及同版本多窗口同时启动（有窗口模式）",
+      "status": "passed",
+      "data": [
+        {
+          "label": "e034123c-7f7b-4469-a823-b362de224701",
+          "fingerprintId": "dff0e64bad34479a5080fd7e17b36be32129733f997fd129857cee13d5445998",
+          "canvas": "93e75de71e1ef713e0fad877f1aafa3a4416a1525bc15da540be6967d78be622",
+          "audio": "dbbc422a99e23b0699883fa2e5fcd477bfde229c35c843e9974facc32280ee0d",
+          "identity": {
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+            "platform": "Win32",
+            "language": "zh-CN",
+            "languages": [
+              "zh-CN",
+              "zh",
+              "en-US",
+              "en"
+            ],
+            "timezone": "Asia/Shanghai",
+            "screen": [
+              1280,
+              720,
+              24
+            ],
+            "hardwareConcurrency": 4,
+            "deviceMemory": null,
+            "doNotTrack": null,
+            "uaData": null
+          },
+          "checks": {
+            "canvasRepeatStable": true,
+            "iframeIdentity": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+              "platform": "Win32",
+              "language": "zh-CN",
+              "hardwareConcurrency": 4
+            },
+            "iframeCanvasMatches": true,
+            "worker": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+              "platform": "Win32",
+              "language": "zh-CN",
+              "hardwareConcurrency": 4,
+              "pixels": [
+                50,
+                100,
+                150,
+                255,
+                49,
+                100,
+                150,
+                255,
+                51,
+                100,
+                150,
+                255,
+                49,
+                100,
+                150,
+                255
+              ]
+            },
+            "moduleWorker": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+              "platform": "Win32",
+              "language": "zh-CN",
+              "hardwareConcurrency": 4,
+              "pixels": [
+                50,
+                100,
+                150,
+                255,
+                49,
+                100,
+                150,
+                255,
+                51,
+                100,
+                150,
+                255,
+                49,
+                100,
+                150,
+                255
+              ]
+            },
+            "webdriver": null,
+            "secureContext": false
+          }
+        },
+        {
+          "label": "e2836d01-6f5b-4e06-9b37-20dd64e11ea6",
+          "fingerprintId": "1625de99789f0dac07281f42509ea6b9e93cc6c461dd6185a6a1e5224b987988",
+          "canvas": "552711ec333c87eaa488bec0d04794fb2d909a15b8647f51f19049867b1ff825",
+          "audio": "1db1638773735f8b474ecacffd1ced38fa5abdba98b251608718f07ed5cc88b7",
+          "identity": {
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259.2 Safari/537.36",
+            "platform": "Win32",
+            "language": "en-US",
+            "languages": [
+              "en-US",
+              "en"
+            ],
+            "timezone": "Asia/Singapore",
+            "screen": [
+              1366,
+              768,
+              24
+            ],
+            "hardwareConcurrency": 4,
+            "deviceMemory": 8,
+            "doNotTrack": null,
+            "uaData": null
+          },
+          "checks": {
+            "canvasRepeatStable": true,
+            "iframeIdentity": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259.2 Safari/537.36",
+              "platform": "Win32",
+              "language": "en-US",
+              "hardwareConcurrency": 4
+            },
+            "iframeCanvasMatches": true,
+            "worker": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259.2 Safari/537.36",
+              "platform": "Win32",
+              "language": "en-US",
+              "hardwareConcurrency": 4,
+              "deviceMemory": 8,
+              "pixels": [
+                50,
+                100,
+                150,
+                255,
+                50,
+                100,
+                150,
+                255,
+                50,
+                100,
+                150,
+                255,
+                51,
+                100,
+                150,
+                255
+              ]
+            },
+            "moduleWorker": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259.2 Safari/537.36",
+              "platform": "Win32",
+              "language": "en-US",
+              "hardwareConcurrency": 4,
+              "deviceMemory": 8,
+              "pixels": [
+                50,
+                100,
+                150,
+                255,
+                50,
+                100,
+                150,
+                255,
+                50,
+                100,
+                150,
+                255,
+                51,
+                100,
+                150,
+                255
+              ]
+            },
+            "webdriver": null,
+            "secureContext": false
+          }
+        },
+        {
+          "label": "e1a88ea2-eed0-454d-b974-349df9f8442c",
+          "fingerprintId": "96f23783d9836f104707448862460da319703386d5e85609db79d74a911de261",
+          "canvas": "f5b57d6a027d69ce9724366879d7d1f7f97116f7f8aefbb433d3713c5bc2297f",
+          "audio": "28eb5b4c050338421259d6bcf867ad89f4280570a15d8f0495a2c7f10b386313",
+          "identity": {
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500.2 Safari/537.36",
+            "platform": "Win32",
+            "language": "en-US",
+            "languages": [
+              "en-US",
+              "en"
+            ],
+            "timezone": "Asia/Singapore",
+            "screen": [
+              1366,
+              768,
+              24
+            ],
+            "hardwareConcurrency": 4,
+            "deviceMemory": 8,
+            "doNotTrack": null,
+            "uaData": null
+          },
+          "checks": {
+            "canvasRepeatStable": true,
+            "iframeIdentity": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500.2 Safari/537.36",
+              "platform": "Win32",
+              "language": "en-US",
+              "hardwareConcurrency": 4
+            },
+            "iframeCanvasMatches": true,
+            "worker": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500.2 Safari/537.36",
+              "platform": "Win32",
+              "language": "en-US",
+              "hardwareConcurrency": 4,
+              "deviceMemory": 8,
+              "pixels": [
+                49,
+                100,
+                150,
+                255,
+                50,
+                100,
+                150,
+                255,
+                49,
+                100,
+                150,
+                255,
+                51,
+                100,
+                150,
+                255
+              ]
+            },
+            "moduleWorker": {
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500.2 Safari/537.36",
+              "platform": "Win32",
+              "language": "en-US",
+              "hardwareConcurrency": 4,
+              "deviceMemory": 8,
+              "pixels": [
+                49,
+                100,
+                150,
+                255,
+                50,
+                100,
+                150,
+                255,
+                49,
+                100,
+                150,
+                255,
+                51,
+                100,
+                150,
+                255
+              ]
+            },
+            "webdriver": null,
+            "secureContext": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "同窗口多标签指纹一致，窗口间 Cookie/localStorage 隔离",
+      "status": "passed",
+      "data": [
+        {
+          "id": "e034123c-7f7b-4469-a823-b362de224701",
+          "tabs": 3,
+          "owner": "e034123c-7f7b-4469-a823-b362de224701",
+          "cookies": "test-matrix-owner=e034123c-7f7b-4469-a823-b362de224701"
+        },
+        {
+          "id": "e2836d01-6f5b-4e06-9b37-20dd64e11ea6",
+          "tabs": 3,
+          "owner": "e2836d01-6f5b-4e06-9b37-20dd64e11ea6",
+          "cookies": "test-matrix-owner=e2836d01-6f5b-4e06-9b37-20dd64e11ea6"
+        },
+        {
+          "id": "e1a88ea2-eed0-454d-b974-349df9f8442c",
+          "tabs": 3,
+          "owner": "e1a88ea2-eed0-454d-b974-349df9f8442c",
+          "cookies": "test-matrix-owner=e1a88ea2-eed0-454d-b974-349df9f8442c"
+        }
+      ]
+    },
+    {
+      "name": "关闭最后标签后重开：多标签、存储和指纹恢复稳定",
+      "status": "passed"
+    },
+    {
+      "name": "自动指纹主页面 / iframe / Worker 的身份一致",
+      "status": "passed"
+    },
+    {
+      "name": "真实 http 代理：HTTPS 出口探测、验证网站和多标签",
+      "status": "passed",
+      "data": {
+        "fingerprintId": "6fa8b96a4dc28588cffaf703ce7a91e14d538e454b46219d5a32f62552fdd2d6",
+        "routing": "http",
+        "tabsStable": true
+      }
+    },
+    {
+      "name": "真实 http-auth 代理：HTTPS 出口探测、验证网站和多标签",
+      "status": "passed",
+      "data": {
+        "fingerprintId": "acf3bd9bc242bda371d62c85af87504c6b6e893d99f0825e1edd0f86921c57b9",
+        "routing": "http-auth",
+        "tabsStable": true
+      }
+    },
+    {
+      "name": "真实 socks5 代理：HTTPS 出口探测、验证网站和多标签",
+      "status": "passed",
+      "data": {
+        "fingerprintId": "57d6336b848cf8646e6e125eaa1ad05806e19069f0898205aae659bd99f10492",
+        "routing": "socks5",
+        "tabsStable": true
+      }
+    },
+    {
+      "name": "真实 socks5-auth 代理：HTTPS 出口探测、验证网站和多标签",
+      "status": "passed",
+      "data": {
+        "fingerprintId": "f70caad35c80f304f42c482378feba63688e3c190200d3bfd653452b4dfdae19",
+        "routing": "socks5-auth",
+        "tabsStable": true
+      }
+    },
+    {
+      "name": "通过代理 API 获取有效认证代理并保持同一窗口指纹",
+      "status": "passed",
+      "data": {
+        "api": true,
+        "routing": "http-auth",
+        "fingerprintStable": true
+      }
+    }
+  ],
+  "passed": 10,
+  "failed": 0,
+  "exitCode": 0,
+  "stderr": "",
+  "summary": {
+    "evidence": "C:\\Users\\ronely\\AppData\\Local\\Temp\\test-finger-matrix-XXXXXXpceSH9",
+    "run": "matrix-win32-1791847899220",
+    "passed": 10,
+    "failed": 0
+  }
+}

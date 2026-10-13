@@ -1,0 +1,223 @@
+{
+  "phase": "mac-live",
+  "platform": "darwin",
+  "evidence": "/var/folders/bf/208ptzms1sl2qysvl8strctm0000gn/T/test-finger-sync-q6jr9n",
+  "records": [
+    {
+      "id": "efc200f1-f767-40b5-98d4-c00166184ae0",
+      "name": "test-sync-20261013-0747-140",
+      "version": "140.0.7259",
+      "configHash": "31d1d24a1d71004d141e34377f94849ada5dfa76c2ea5f0ecf284ac4dffe5c5e",
+      "config": {
+        "base": {
+          "name": "test-sync-20261013-0747-140",
+          "url": "http://192.168.50.221:19090/?run=sync-20261013-0747&label=test-sync-20261013-0747-140&auto=1",
+          "operatingSystem": [
+            "Mac OS X 14"
+          ],
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+          "browserVersion": "140.0.7259",
+          "cookies": "",
+          "remark": ""
+        },
+        "proxy": {
+          "enabled": false,
+          "type": "http",
+          "host": "",
+          "port": 0,
+          "text": "",
+          "username": "",
+          "password": "",
+          "delimiter": ":",
+          "method": "manual"
+        },
+        "finger": {
+          "autoFingerprint": true,
+          "webgl": false,
+          "canvas": false,
+          "audioFingerprint": false,
+          "timezone": "auto",
+          "language": "zh-CN",
+          "languages": [
+            "zh-CN",
+            "zh",
+            "en-US",
+            "en"
+          ],
+          "platform": "MacIntel",
+          "screenResolution": "auto",
+          "colorDepth": 24,
+          "hardwareConcurrency": 0,
+          "deviceMemory": 0,
+          "webRTC": "default",
+          "doNotTrack": false,
+          "fonts": "default",
+          "plugins": "default",
+          "clientRects": false,
+          "batteryAPI": "real",
+          "mediaDevices": "real",
+          "webglVendor": "",
+          "webglRenderer": ""
+        },
+        "groupId": 0
+      },
+      "observation": {
+        "run": "sync-20261013-0747",
+        "label": "efc200f1-f767-40b5-98d4-c00166184ae0",
+        "phase": "mac-live",
+        "timestamp": "2026-10-13T00:16:56.134Z",
+        "fingerprintId": "7bfaea8ce3aaccf7032c12971e985b152db1109a31940d5d8433fa8d4df08fb1",
+        "signalId": "72b77230a9a21d9fd24df590416927b463b82e1023e135f83da87a5b6f97f8a3",
+        "componentHashes": {
+          "canvas": "45192f94f3aed0110fc27398790140409a056d0262763c9d4eb7635261d7a5af",
+          "canvasPixels": "0c9063253e8b212adb0c1144ff653f4c03cdb3a221e0285c4dc4985a19845f31",
+          "audio": "670069ec918cada8e4afebb95f775f8a7fdd64fa4ec54ea9dcfe8803803a0491",
+          "webgl": "17d7816e5929c351f37cd4df6621f38982a7cce1571be30099f8ac616d8393b6",
+          "clientRects": "b0f4576ffc5461ded7015ff3095901d7cc9a440d86929bd27e296cb4eff6e6a4"
+        },
+        "identity": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "languages": [
+            "zh-CN",
+            "zh",
+            "en-US",
+            "en"
+          ],
+          "timezone": "Asia/Shanghai",
+          "screen": [
+            1280,
+            720,
+            30
+          ],
+          "hardwareConcurrency": 8,
+          "deviceMemory": null,
+          "doNotTrack": null,
+          "uaData": null
+        },
+        "checks": {
+          "canvasRepeatStable": true,
+          "iframeIdentity": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8
+          },
+          "iframeCanvasMatches": true,
+          "worker": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8,
+            "pixels": [
+              49,
+              100,
+              150,
+              255,
+              49,
+              100,
+              150,
+              255,
+              51,
+              100,
+              150,
+              255,
+              50,
+              100,
+              150,
+              255
+            ]
+          },
+          "moduleWorker": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8,
+            "pixels": [
+              49,
+              100,
+              150,
+              255,
+              49,
+              100,
+              150,
+              255,
+              51,
+              100,
+              150,
+              255,
+              50,
+              100,
+              150,
+              255
+            ]
+          },
+          "webdriver": null,
+          "secureContext": false
+        },
+        "request": {
+          "peer": "192.168.50.221",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+          "acceptLanguage": "zh-CN",
+          "proxy": null
+        }
+      },
+      "storage": {
+        "owner": "efc200f1-f767-40b5-98d4-c00166184ae0",
+        "localStorage": "from-windows",
+        "sessionStorage": "from-windows",
+        "indexedDB": "from-windows",
+        "opfs": "from-windows",
+        "opfsBinary": [
+          0,
+          255,
+          128,
+          13,
+          10
+        ],
+        "opfsEmptyDirectory": true,
+        "cacheStorage": "from-windows",
+        "serverSession": {
+          "signedIn": true,
+          "session": "test-auth-efc200f1-f767-40b5-98d4-c00166184ae0"
+        },
+        "httpOnlyCookie": true,
+        "cookieValue": "test-auth-efc200f1-f767-40b5-98d4-c00166184ae0"
+      },
+      "runningIds": [
+        "efc200f1-f767-40b5-98d4-c00166184ae0"
+      ],
+      "afterPeerClose": {
+        "owner": "efc200f1-f767-40b5-98d4-c00166184ae0",
+        "localStorage": "from-windows",
+        "sessionStorage": "from-windows",
+        "indexedDB": "from-windows",
+        "opfs": "from-windows",
+        "opfsBinary": [
+          0,
+          255,
+          128,
+          13,
+          10
+        ],
+        "opfsEmptyDirectory": true,
+        "cacheStorage": "from-windows",
+        "serverSession": {
+          "signedIn": true,
+          "session": "test-auth-efc200f1-f767-40b5-98d4-c00166184ae0"
+        },
+        "httpOnlyCookie": true,
+        "cookieValue": "test-auth-efc200f1-f767-40b5-98d4-c00166184ae0"
+      },
+      "staleWriteRejected": true,
+      "conflictMessage": "page.evaluate: Error: Error invoking remote method 'save-credential': Error: 浏览器状态已在其他设备更新，请关闭窗口并重新打开",
+      "cloudValue": "from-windows-live",
+      "localOutboxRetained": true,
+      "localOutboxRevision": 25,
+      "newerCloudRevision": 28
+    }
+  ],
+  "passed": true,
+  "stage": "closed"
+}

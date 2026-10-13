@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": [
+    "missing-label",
+    "real-signals",
+    "label-excluded",
+    "export",
+    "desktop",
+    "mobile",
+    "invalid-payload",
+    "no-renderer-errors"
+  ]
+}

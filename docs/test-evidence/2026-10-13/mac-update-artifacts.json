@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "files": [
+    {
+      "name": "fingerbrowser-Setup-0.2.0.zip",
+      "bytes": 128747431,
+      "sha512Verified": true,
+      "sha256": "ff79b588ef594acb365f8cfa330082d6b9e107cad85b00779d9155837e4c2d50"
+    },
+    {
+      "name": "fingerbrowser-Setup-0.2.0.dmg",
+      "bytes": 134137947,
+      "sha512Verified": true,
+      "sha256": "bd65a5d2908f2091afb96ffe33a917476b7939240ea88917da26a1383a5b7724"
+    }
+  ],
+  "published": false,
+  "developerIdSigned": false,
+  "includesCrossDeviceSyncFixes": true
+}

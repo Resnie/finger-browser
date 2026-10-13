@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "kernel": "140.0.7259.2",
+  "profileFiles": 43,
+  "restoreKernel": "144.0.7500.2",
+  "restored": [
+    "原生书签",
+    "站点权限",
+    "稳定ID扩展与扩展数据",
+    "禁用扩展不复活",
+    "同URL关闭首标签后重排",
+    "拒绝跨源iframe伪造",
+    "ServiceWorker",
+    "OPFS",
+    "CacheStorage",
+    "独立标签sessionStorage",
+    "真实BrowserInstance bootstrap不污染恢复队列",
+    "清理后不复活",
+    "拒绝内核降级"
+  ]
+}

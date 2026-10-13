@@ -1,0 +1,98 @@
+{
+  "node": {
+    "passed": 242,
+    "failed": 0
+  },
+  "go": {
+    "testPassEvents": 560,
+    "packagesPassed": 14,
+    "failed": 0
+  },
+  "phases": {
+    "mac-create": true,
+    "windows-handoff": true,
+    "mac-return": true,
+    "mac-live": true,
+    "windows-live": true
+  },
+  "comparisons": [
+    {
+      "id": "efc200f1-f767-40b5-98d4-c00166184ae0",
+      "version": "140.0.7259",
+      "sameConfiguration": true,
+      "macFingerprint": "7bfaea8ce3aaccf7032c12971e985b152db1109a31940d5d8433fa8d4df08fb1",
+      "windowsFingerprint": "485f355212f953153b61d839e7f9f914287e01f9e2f13c999f737bb9e648483a",
+      "returnMacFingerprint": "7bfaea8ce3aaccf7032c12971e985b152db1109a31940d5d8433fa8d4df08fb1",
+      "sameFingerprintAcrossPlatforms": false,
+      "observationFields": [
+        "run",
+        "label",
+        "phase",
+        "timestamp",
+        "fingerprintId",
+        "signalId",
+        "componentHashes",
+        "identity",
+        "checks",
+        "request"
+      ]
+    },
+    {
+      "id": "1ef8b68e-65e8-4216-8069-67e03db1676f",
+      "version": "144.0.7500",
+      "sameConfiguration": true,
+      "macFingerprint": "a80ba599028c21e83501053600a4fb8d09c9c4fb6a693829dac19c31602a921e",
+      "windowsFingerprint": "30fb7442a912523f12c85c159f335b906345d7a1554c1271dcf72bacff458252",
+      "returnMacFingerprint": "a80ba599028c21e83501053600a4fb8d09c9c4fb6a693829dac19c31602a921e",
+      "sameFingerprintAcrossPlatforms": false,
+      "observationFields": [
+        "run",
+        "label",
+        "phase",
+        "timestamp",
+        "fingerprintId",
+        "signalId",
+        "componentHashes",
+        "identity",
+        "checks",
+        "request"
+      ]
+    }
+  ],
+  "windowsInstaller": {
+    "sha256": "5e6769539662d2c1f25b981d8b4621f1de920ac354d3f2d30226f66605dc8958",
+    "installationExitCode": 0
+  },
+  "limitations": [
+    "Identical UUID/configuration does not imply identical measured fingerprint across operating systems.",
+    "No live merge between simultaneously running local Chromium processes.",
+    "Session login assertions use the controlled local HttpOnly-cookie fixture.",
+    "OPFS archive covers the default origin storage exposed by navigator.storage.getDirectory, with existing sync size limits.",
+    "Tests use the isolated local acceptance API, not a production deployment."
+  ],
+  "cleanup": {
+    "testCoordinatorStopped": true,
+    "lanFingerprintSiteKeptRunning": true,
+    "normalSiteTestEndpointsDisabled": true
+  },
+  "macArtifacts": {
+    "version": "0.2.0",
+    "files": [
+      {
+        "name": "fingerbrowser-Setup-0.2.0.zip",
+        "bytes": 128747431,
+        "sha512Verified": true,
+        "sha256": "ff79b588ef594acb365f8cfa330082d6b9e107cad85b00779d9155837e4c2d50"
+      },
+      {
+        "name": "fingerbrowser-Setup-0.2.0.dmg",
+        "bytes": 134137947,
+        "sha512Verified": true,
+        "sha256": "bd65a5d2908f2091afb96ffe33a917476b7939240ea88917da26a1383a5b7724"
+      }
+    ],
+    "published": false,
+    "developerIdSigned": false,
+    "includesCrossDeviceSyncFixes": true
+  }
+}

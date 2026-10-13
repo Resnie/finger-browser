@@ -1,0 +1,52 @@
+{
+  "evidence": "/var/folders/bf/208ptzms1sl2qysvl8strctm0000gn/T/test-finger-full-ui-Nsntn1",
+  "username": "test-full-ui-mv5llfji",
+  "passed": 7,
+  "failed": 0,
+  "results": [
+    {
+      "name": "邮箱注册：未配置服务时禁用入口",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 3719
+    },
+    {
+      "name": "邮箱注册：单独/批量、数量边界、复制结果、部分未保存、错误重试",
+      "kind": "controlled-registration-api; no-external-mailbox-created",
+      "status": "passed",
+      "ms": 7060
+    },
+    {
+      "name": "额度：10个免费账号、批量超额拒绝、删除不返还、重复更新不扣次数",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 13025
+    },
+    {
+      "name": "分页：数量切换、翻页、跳页、最后一页删除回退",
+      "kind": "real-ui-api; list-fixtures-directly-seeded",
+      "status": "passed",
+      "ms": 1936
+    },
+    {
+      "name": "自动更新：发现版本、进度边界、下载完成、安装失败、错误与监听清理",
+      "kind": "controlled-update-ipc; no-real-update-installation",
+      "status": "passed",
+      "ms": 3852
+    },
+    {
+      "name": "全局更新提示：安装失败应被捕获并向用户说明",
+      "kind": "controlled-install-failure; no-real-update-installation",
+      "status": "passed",
+      "ms": 8302
+    },
+    {
+      "name": "补充操作没有未捕获渲染异常",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 15
+    }
+  ],
+  "rendererErrors": [],
+  "unexpectedOrigins": []
+}

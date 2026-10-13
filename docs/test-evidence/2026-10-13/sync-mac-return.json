@@ -1,0 +1,508 @@
+{
+  "phase": "mac-return",
+  "platform": "darwin",
+  "evidence": "/var/folders/bf/208ptzms1sl2qysvl8strctm0000gn/T/test-finger-sync-o1qejP",
+  "records": [
+    {
+      "id": "efc200f1-f767-40b5-98d4-c00166184ae0",
+      "name": "test-sync-20261013-0747-140",
+      "version": "140.0.7259",
+      "configHash": "31d1d24a1d71004d141e34377f94849ada5dfa76c2ea5f0ecf284ac4dffe5c5e",
+      "config": {
+        "base": {
+          "name": "test-sync-20261013-0747-140",
+          "url": "http://192.168.50.221:19090/?run=sync-20261013-0747&label=test-sync-20261013-0747-140&auto=1",
+          "operatingSystem": [
+            "Mac OS X 14"
+          ],
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+          "browserVersion": "140.0.7259",
+          "cookies": "",
+          "remark": ""
+        },
+        "proxy": {
+          "enabled": false,
+          "type": "http",
+          "host": "",
+          "port": 0,
+          "text": "",
+          "username": "",
+          "password": "",
+          "delimiter": ":",
+          "method": "manual"
+        },
+        "finger": {
+          "autoFingerprint": true,
+          "webgl": false,
+          "canvas": false,
+          "audioFingerprint": false,
+          "timezone": "auto",
+          "language": "zh-CN",
+          "languages": [
+            "zh-CN",
+            "zh",
+            "en-US",
+            "en"
+          ],
+          "platform": "MacIntel",
+          "screenResolution": "auto",
+          "colorDepth": 24,
+          "hardwareConcurrency": 0,
+          "deviceMemory": 0,
+          "webRTC": "default",
+          "doNotTrack": false,
+          "fonts": "default",
+          "plugins": "default",
+          "clientRects": false,
+          "batteryAPI": "real",
+          "mediaDevices": "real",
+          "webglVendor": "",
+          "webglRenderer": ""
+        },
+        "groupId": 0
+      },
+      "observation": {
+        "run": "sync-20261013-0747",
+        "label": "efc200f1-f767-40b5-98d4-c00166184ae0",
+        "phase": "mac-return",
+        "timestamp": "2026-10-13T00:16:13.917Z",
+        "fingerprintId": "7bfaea8ce3aaccf7032c12971e985b152db1109a31940d5d8433fa8d4df08fb1",
+        "signalId": "72b77230a9a21d9fd24df590416927b463b82e1023e135f83da87a5b6f97f8a3",
+        "componentHashes": {
+          "canvas": "45192f94f3aed0110fc27398790140409a056d0262763c9d4eb7635261d7a5af",
+          "canvasPixels": "0c9063253e8b212adb0c1144ff653f4c03cdb3a221e0285c4dc4985a19845f31",
+          "audio": "670069ec918cada8e4afebb95f775f8a7fdd64fa4ec54ea9dcfe8803803a0491",
+          "webgl": "17d7816e5929c351f37cd4df6621f38982a7cce1571be30099f8ac616d8393b6",
+          "clientRects": "b0f4576ffc5461ded7015ff3095901d7cc9a440d86929bd27e296cb4eff6e6a4"
+        },
+        "identity": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "languages": [
+            "zh-CN",
+            "zh",
+            "en-US",
+            "en"
+          ],
+          "timezone": "Asia/Shanghai",
+          "screen": [
+            1280,
+            720,
+            30
+          ],
+          "hardwareConcurrency": 8,
+          "deviceMemory": null,
+          "doNotTrack": null,
+          "uaData": null
+        },
+        "checks": {
+          "canvasRepeatStable": true,
+          "iframeIdentity": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8
+          },
+          "iframeCanvasMatches": true,
+          "worker": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8,
+            "pixels": [
+              49,
+              100,
+              150,
+              255,
+              49,
+              100,
+              150,
+              255,
+              51,
+              100,
+              150,
+              255,
+              50,
+              100,
+              150,
+              255
+            ]
+          },
+          "moduleWorker": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8,
+            "pixels": [
+              49,
+              100,
+              150,
+              255,
+              49,
+              100,
+              150,
+              255,
+              51,
+              100,
+              150,
+              255,
+              50,
+              100,
+              150,
+              255
+            ]
+          },
+          "webdriver": null,
+          "secureContext": false
+        },
+        "request": {
+          "peer": "192.168.50.221",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+          "acceptLanguage": "zh-CN",
+          "proxy": null
+        }
+      },
+      "storage": {
+        "owner": "efc200f1-f767-40b5-98d4-c00166184ae0",
+        "localStorage": "from-windows",
+        "sessionStorage": "from-windows",
+        "indexedDB": "from-windows",
+        "opfs": "from-windows",
+        "opfsBinary": [
+          0,
+          255,
+          128,
+          13,
+          10
+        ],
+        "opfsEmptyDirectory": true,
+        "cacheStorage": "from-windows",
+        "serverSession": {
+          "signedIn": true,
+          "session": "test-auth-efc200f1-f767-40b5-98d4-c00166184ae0"
+        },
+        "httpOnlyCookie": true,
+        "cookieValue": "test-auth-efc200f1-f767-40b5-98d4-c00166184ae0"
+      },
+      "repeatedFingerprintId": "7bfaea8ce3aaccf7032c12971e985b152db1109a31940d5d8433fa8d4df08fb1",
+      "historyRestored": true,
+      "credentialsRestored": true,
+      "recoveryRevision": 23,
+      "savedSessionStorage": [
+        {
+          "index": 0,
+          "origins": [
+            {
+              "entries": [],
+              "origin": "http://192.168.50.221:19090"
+            }
+          ],
+          "url": "http://192.168.50.221:19090/?run=sync-20261013-0747&label=efc200f1-f767-40b5-98d4-c00166184ae0&phase=mac-return-repeat&auto=1"
+        },
+        {
+          "index": 1,
+          "origins": [
+            {
+              "entries": [
+                {
+                  "name": "test-sync-value",
+                  "value": "from-windows"
+                }
+              ],
+              "origin": "http://127.0.0.1:19093"
+            }
+          ],
+          "url": "http://127.0.0.1:19093/"
+        }
+      ],
+      "savedPageUrls": "[{\"url\":\"http://192.168.50.221:19090/?run=sync-20261013-0747\\u0026label=efc200f1-f767-40b5-98d4-c00166184ae0\\u0026phase=mac-return-repeat\\u0026auto=1\",\"title\":\"\"},{\"url\":\"http://127.0.0.1:19093/\",\"title\":\"\"}]",
+      "savedOpfs": {
+        "origins": [
+          {
+            "directories": [
+              [
+                "目录"
+              ],
+              [
+                "empty"
+              ]
+            ],
+            "files": [
+              {
+                "bytes": 5,
+                "data": "AP+ADQo=",
+                "path": [
+                  "目录",
+                  "binary.dat"
+                ],
+                "sha256": "6171db06a1c89b1ff8ab77e479d5df976ccd88a7b63567b4b18f413649e12ff3"
+              },
+              {
+                "bytes": 12,
+                "data": "ZnJvbS13aW5kb3dz",
+                "path": [
+                  "test-sync.txt"
+                ],
+                "sha256": "ed76f8ea8a0e32c3dfb57bf481599a9c24f256d9ed17979a9b6ae0ce7ced97db"
+              }
+            ],
+            "origin": "http://127.0.0.1:19093"
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "id": "1ef8b68e-65e8-4216-8069-67e03db1676f",
+      "name": "test-sync-20261013-0747-144",
+      "version": "144.0.7500",
+      "configHash": "c804afa9b5e758431c0871ded15b3a49a7c0041980345bbf9ad0ddf43c7c6f6c",
+      "config": {
+        "base": {
+          "name": "test-sync-20261013-0747-144",
+          "url": "http://192.168.50.221:19090/?run=sync-20261013-0747&label=test-sync-20261013-0747-144&auto=1",
+          "operatingSystem": [
+            "Mac OS X 14"
+          ],
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500 Safari/537.36",
+          "browserVersion": "144.0.7500",
+          "cookies": "",
+          "remark": ""
+        },
+        "proxy": {
+          "enabled": false,
+          "type": "http",
+          "host": "",
+          "port": 0,
+          "text": "",
+          "username": "",
+          "password": "",
+          "delimiter": ":",
+          "method": "manual"
+        },
+        "finger": {
+          "autoFingerprint": true,
+          "webgl": false,
+          "canvas": false,
+          "audioFingerprint": false,
+          "timezone": "auto",
+          "language": "zh-CN",
+          "languages": [
+            "zh-CN",
+            "zh",
+            "en-US",
+            "en"
+          ],
+          "platform": "MacIntel",
+          "screenResolution": "auto",
+          "colorDepth": 24,
+          "hardwareConcurrency": 0,
+          "deviceMemory": 0,
+          "webRTC": "default",
+          "doNotTrack": false,
+          "fonts": "default",
+          "plugins": "default",
+          "clientRects": false,
+          "batteryAPI": "real",
+          "mediaDevices": "real",
+          "webglVendor": "",
+          "webglRenderer": ""
+        },
+        "groupId": 0
+      },
+      "observation": {
+        "run": "sync-20261013-0747",
+        "label": "1ef8b68e-65e8-4216-8069-67e03db1676f",
+        "phase": "mac-return",
+        "timestamp": "2026-10-13T00:16:21.376Z",
+        "fingerprintId": "a80ba599028c21e83501053600a4fb8d09c9c4fb6a693829dac19c31602a921e",
+        "signalId": "fe046c817405c7c332757e5279c557282caeead568258aaadd8ecbe9d528ce60",
+        "componentHashes": {
+          "canvas": "9035f6257457aa26f0fdf3a9dfd27fe9bd672431bbe7ba31c0711914375f55ad",
+          "canvasPixels": "6ebeafe96fa7645864fa1984ec90d5fa3843320a4bcf5bd8bf7faa92dc28a169",
+          "audio": "d3c40c500b53dfe7a7b222de1d0e3a28c949d2134144c2b02403825aba76e937",
+          "webgl": "17d7816e5929c351f37cd4df6621f38982a7cce1571be30099f8ac616d8393b6",
+          "clientRects": "461a644c40b7a2a8a181248a290c3b0c9ec265e034244a803f7d346587f0d990"
+        },
+        "identity": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500 Safari/537.36",
+          "platform": "MacIntel",
+          "language": "zh-CN",
+          "languages": [
+            "zh-CN",
+            "zh",
+            "en-US",
+            "en"
+          ],
+          "timezone": "Asia/Shanghai",
+          "screen": [
+            1280,
+            720,
+            30
+          ],
+          "hardwareConcurrency": 8,
+          "deviceMemory": null,
+          "doNotTrack": null,
+          "uaData": null
+        },
+        "checks": {
+          "canvasRepeatStable": true,
+          "iframeIdentity": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8
+          },
+          "iframeCanvasMatches": true,
+          "worker": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8,
+            "pixels": [
+              49,
+              100,
+              150,
+              255,
+              51,
+              100,
+              150,
+              255,
+              49,
+              100,
+              150,
+              255,
+              50,
+              100,
+              150,
+              255
+            ]
+          },
+          "moduleWorker": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500 Safari/537.36",
+            "platform": "MacIntel",
+            "language": "zh-CN",
+            "hardwareConcurrency": 8,
+            "pixels": [
+              49,
+              100,
+              150,
+              255,
+              51,
+              100,
+              150,
+              255,
+              49,
+              100,
+              150,
+              255,
+              50,
+              100,
+              150,
+              255
+            ]
+          },
+          "webdriver": null,
+          "secureContext": false
+        },
+        "request": {
+          "peer": "192.168.50.221",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7500 Safari/537.36",
+          "acceptLanguage": "zh-CN",
+          "proxy": null
+        }
+      },
+      "storage": {
+        "owner": "1ef8b68e-65e8-4216-8069-67e03db1676f",
+        "localStorage": "from-windows",
+        "sessionStorage": "from-windows",
+        "indexedDB": "from-windows",
+        "opfs": "from-windows",
+        "opfsBinary": [
+          0,
+          255,
+          128,
+          13,
+          10
+        ],
+        "opfsEmptyDirectory": true,
+        "cacheStorage": "from-windows",
+        "serverSession": {
+          "signedIn": true,
+          "session": "test-auth-1ef8b68e-65e8-4216-8069-67e03db1676f"
+        },
+        "httpOnlyCookie": true,
+        "cookieValue": "test-auth-1ef8b68e-65e8-4216-8069-67e03db1676f"
+      },
+      "repeatedFingerprintId": "a80ba599028c21e83501053600a4fb8d09c9c4fb6a693829dac19c31602a921e",
+      "historyRestored": true,
+      "credentialsRestored": true,
+      "recoveryRevision": 15,
+      "savedSessionStorage": [
+        {
+          "index": 0,
+          "origins": [
+            {
+              "entries": [],
+              "origin": "http://192.168.50.221:19090"
+            }
+          ],
+          "url": "http://192.168.50.221:19090/?run=sync-20261013-0747&label=1ef8b68e-65e8-4216-8069-67e03db1676f&phase=mac-return-repeat&auto=1"
+        },
+        {
+          "index": 1,
+          "origins": [
+            {
+              "entries": [
+                {
+                  "name": "test-sync-value",
+                  "value": "from-windows"
+                }
+              ],
+              "origin": "http://127.0.0.1:19093"
+            }
+          ],
+          "url": "http://127.0.0.1:19093/"
+        }
+      ],
+      "savedPageUrls": "[{\"url\":\"http://192.168.50.221:19090/?run=sync-20261013-0747\\u0026label=1ef8b68e-65e8-4216-8069-67e03db1676f\\u0026phase=mac-return-repeat\\u0026auto=1\",\"title\":\"\"},{\"url\":\"http://127.0.0.1:19093/\",\"title\":\"\"}]",
+      "savedOpfs": {
+        "origins": [
+          {
+            "directories": [
+              [
+                "目录"
+              ],
+              [
+                "empty"
+              ]
+            ],
+            "files": [
+              {
+                "bytes": 5,
+                "data": "AP+ADQo=",
+                "path": [
+                  "目录",
+                  "binary.dat"
+                ],
+                "sha256": "6171db06a1c89b1ff8ab77e479d5df976ccd88a7b63567b4b18f413649e12ff3"
+              },
+              {
+                "bytes": 12,
+                "data": "ZnJvbS13aW5kb3dz",
+                "path": [
+                  "test-sync.txt"
+                ],
+                "sha256": "ed76f8ea8a0e32c3dfb57bf481599a9c24f256d9ed17979a9b6ae0ce7ced97db"
+              }
+            ],
+            "origin": "http://127.0.0.1:19093"
+          }
+        ],
+        "version": 1
+      }
+    }
+  ],
+  "passed": true
+}

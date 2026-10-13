@@ -1,0 +1,34 @@
+{
+  "node": {
+    "passed": 235,
+    "failed": 0,
+    "groups": [
+      4,
+      91,
+      65,
+      17,
+      42,
+      13,
+      3
+    ]
+  },
+  "go": {
+    "passedTestEvents": 559,
+    "passedPackages": 14,
+    "failed": 0
+  },
+  "mysql": {
+    "realApiAndSchemaPassed": true
+  },
+  "mailProtocol": {
+    "realLocalTlsCases": 13,
+    "passed": true,
+    "remoteMailcowDeferred": true
+  },
+  "windowsInstaller": {
+    "version": "0.2.0",
+    "sha256": "cefe649a4694e18e5e990806e1426e7ea126a7410baae7d75893aea8c1870271",
+    "exitCode": 0,
+    "formalRelease": false
+  }
+}

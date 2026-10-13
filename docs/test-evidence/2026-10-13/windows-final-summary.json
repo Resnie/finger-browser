@@ -1,0 +1,35 @@
+{
+  "finished": true,
+  "summaries": [
+    {
+      "name": "cloud",
+      "exitCode": 0,
+      "passed": true,
+      "mode": "browser-restore",
+      "platform": "win32",
+      "evidence": "C:\\Users\\ronely\\AppData\\Local\\Temp\\test-finger-ui-1012-XXXXXXpdrEHF"
+    },
+    {
+      "name": "ui",
+      "exitCode": 0,
+      "evidence": "C:\\Users\\ronely\\AppData\\Local\\Temp\\test-finger-full-ui-XXXXXXLdTQKJ",
+      "username": "test-full-ui-win-final-handles-20261013",
+      "passed": 41,
+      "failed": 0
+    },
+    {
+      "name": "matrix",
+      "exitCode": 0,
+      "evidence": "C:\\Users\\ronely\\AppData\\Local\\Temp\\test-finger-matrix-XXXXXXpceSH9",
+      "run": "matrix-win32-1791847899220",
+      "passed": 10,
+      "failed": 0
+    },
+    {
+      "name": "paths",
+      "exitCode": 0,
+      "passed": true
+    }
+  ],
+  "installerSha256": "cefe649a4694e18e5e990806e1426e7ea126a7410baae7d75893aea8c1870271"
+}

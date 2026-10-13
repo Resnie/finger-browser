@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "tests": [
+    "trusted-tls",
+    "uid-1",
+    "binance-mime-html",
+    "fresh-code",
+    "cache-hole-retry",
+    "uidvalidity-reset",
+    "early-disconnect",
+    "invalid-tls-no-credentials",
+    "wrong-password",
+    "pop3-partial-retry",
+    "pop3-uidl-stability",
+    "fresh-device-resync",
+    "reject-plaintext-and-command-injection"
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "evidence": "C:\\Users\\ronely\\AppData\\Local\\Temp\\test-finger-full-ui-XXXXXXLdTQKJ",
+  "username": "test-full-ui-win-final-handles-20261013",
+  "passed": 41,
+  "failed": 0,
+  "results": [
+    {
+      "name": "未登录访问业务路由会回到登录页",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 67
+    },
+    {
+      "name": "登录空表单与长度边界",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 508
+    },
+    {
+      "name": "错误密码保持登录页且可重试",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 578
+    },
+    {
+      "name": "记住密码、回车登录与长用户名",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 3825
+    },
+    {
+      "name": "浏览器分组：空名称拒绝、创建、搜索、编辑、取消删除、详情跳转",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 7433
+    },
+    {
+      "name": "账号分组：空名称拒绝、创建、搜索、编辑、取消删除、详情跳转",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 5739
+    },
+    {
+      "name": "账号：空/非法邮箱、缺密码拒绝、取消与重开表单",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 3524
+    },
+    {
+      "name": "账号：创建全部资料和云端谷歌密钥，列表不暴露密码",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2691
+    },
+    {
+      "name": "账号：编辑全部字段、保留谷歌密钥、备注双击保存",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4112
+    },
+    {
+      "name": "账号：谷歌码显示、刷新、复制、关闭",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4087
+    },
+    {
+      "name": "账号：名称/邮箱搜索与空结果恢复",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2833
+    },
+    {
+      "name": "快速添加：空、坏行、重复去重、已有账号更新",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2875
+    },
+    {
+      "name": "导入导出：真实模板文件、有效/重复/坏文件、取消文件选择",
+      "kind": "real-ui-api-files; native-dialog-selection-controlled",
+      "status": "passed",
+      "ms": 6950
+    },
+    {
+      "name": "账号：邮件展示/刷新、HTML隔离、验证码、实名状态与失败重试",
+      "kind": "ui-with-controlled-mail-ipc; protocol-tested-separately",
+      "status": "passed",
+      "ms": 7636
+    },
+    {
+      "name": "账号：单条修改分组、取消不保存、移回未分组",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6903
+    },
+    {
+      "name": "谷歌密钥：缺失提示、旧本机密钥迁移取消/确认及云端保护",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 7737
+    },
+    {
+      "name": "账号：删除取消、单条删除、未选择批删、批删确认",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4921
+    },
+    {
+      "name": "浏览器：未选择批量分组/删除、空表单、取消",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4833
+    },
+    {
+      "name": "浏览器：非法URL、Cookie JSON、代理格式阻止提交",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4940
+    },
+    {
+      "name": "浏览器：创建、关联账号、分组、初始Cookie、全部指纹表单",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 7512
+    },
+    {
+      "name": "浏览器：编辑、备注双击、克隆取消、克隆创建",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6783
+    },
+    {
+      "name": "浏览器：名称搜索、批量分组、单条移回未分组",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6324
+    },
+    {
+      "name": "真实内核：打开、重复点击、指纹和Cookie、重开、关闭恢复",
+      "kind": "real-ui-api-chromium-headless",
+      "status": "passed",
+      "ms": 16373
+    },
+    {
+      "name": "浏览器：历史显示/搜索/清空取消与确认、凭据增改/删除",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 6985
+    },
+    {
+      "name": "浏览器：关联账号谷歌码与邮箱验证码快捷入口",
+      "kind": "real-cloud-totp; controlled-mail-ipc",
+      "status": "passed",
+      "ms": 6689
+    },
+    {
+      "name": "代理：真实失效HTTP代理和坏API返回阻止启动，修正后恢复",
+      "kind": "real-ui-api-chromium; local-unreachable-proxy-and-local-bad-api",
+      "status": "passed",
+      "ms": 15344
+    },
+    {
+      "name": "内核：本地列表、空间、刷新、依赖保护、在线搜索与刷新",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2845
+    },
+    {
+      "name": "内核：真实下载启动、取消与中间文件清理",
+      "kind": "real-ui-public-kernel-download",
+      "status": "passed",
+      "ms": 2190
+    },
+    {
+      "name": "设置：打包版真实更新检查结果、失败提示与重试",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 5186,
+      "details": {
+        "observations": [
+          "当前已是最新版本",
+          "当前已是最新版本"
+        ]
+      }
+    },
+    {
+      "name": "余额账单：真实余额/免费次数、刷新、无充值入口",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 455
+    },
+    {
+      "name": "余额账单：接口失败提示、按钮恢复、重试成功",
+      "kind": "real-ui; injected-http-failure",
+      "status": "passed",
+      "ms": 193
+    },
+    {
+      "name": "最小桌面尺寸与全部页面导航/刷新",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 1971
+    },
+    {
+      "name": "退出登录关闭运行窗口并撤销旧会话，密码安全回填",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4511
+    },
+    {
+      "name": "客户端重启保持登录与浏览器云端资料",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 5165
+    },
+    {
+      "name": "浏览器：单条删除取消、批量删除与本地档案清理",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 1652
+    },
+    {
+      "name": "内核：无依赖内核删除、取消与实际移除",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 4909
+    },
+    {
+      "name": "分组：删除账号组只解除关联，删除空窗口组",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 5148
+    },
+    {
+      "name": "取消记住密码立即清除，下次重启不回填",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 5995
+    },
+    {
+      "name": "登录失效：401清除会话并导航到登录页",
+      "kind": "real-ui; injected-http-401",
+      "status": "passed",
+      "ms": 4221
+    },
+    {
+      "name": "登录失效：HTTP 200 的业务 401 同样清除静默请求会话",
+      "kind": "real-ui; injected-business-401",
+      "status": "passed",
+      "ms": 1469
+    },
+    {
+      "name": "整个操作链没有未捕获渲染异常或业务外部请求",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 2368
+    }
+  ],
+  "rendererErrors": [],
+  "unexpectedOrigins": [],
+  "exitCode": 0,
+  "stderr": "",
+  "summary": {
+    "evidence": "C:\\Users\\ronely\\AppData\\Local\\Temp\\test-finger-full-ui-XXXXXXLdTQKJ",
+    "username": "test-full-ui-win-final-handles-20261013",
+    "passed": 41,
+    "failed": 0
+  }
+}

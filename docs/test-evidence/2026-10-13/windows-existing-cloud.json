@@ -1,0 +1,76 @@
+{
+  "browserId": "c9c19fe2-3ce2-4cde-b5db-fa82a39d3dc0",
+  "result": {
+    "opfs": "test-opfs-content",
+    "cache": "test-cache-content",
+    "cacheNames": [
+      "test-cache"
+    ],
+    "cacheRequests": [
+      "http://127.0.0.1:19081/test-cached"
+    ],
+    "local": "test-local-latest",
+    "session": "test-second-tab-latest",
+    "idb": "test-idb-latest",
+    "platform": "Win32",
+    "language": "en-US",
+    "timezone": "Asia/Singapore",
+    "width": 1366,
+    "height": 768,
+    "cpu": 4,
+    "memory": 8,
+    "dnt": "1",
+    "cookie": "test-cookie-content",
+    "launchPath": "C:\\Users\\ronely\\AppData\\Local\\Temp\\fb-oLg502\\c9c19fe2-3ce2-4cde-b5db-fa82a39d3dc0",
+    "launchOptions": {
+      "args": [
+        "--disable-infobars",
+        "--no-first-run",
+        "--disable-session-crashed-bubble",
+        "--hide-crash-restore-bubble",
+        "--disable-restore-session-state",
+        "--disable-background-networking",
+        "--disable-sync",
+        "--disable-default-apps",
+        "--disable-component-extensions-with-background-pages",
+        "--disable-prerender2",
+        "--disable-speculation-rules",
+        "--disable-back-forward-cache",
+        "--disable-features=Prerender2,SpeculationRules,BackForwardCache,PreloadingHoldback,ChromeWhatsNewUI,InfiniteSessionRestore,SessionCrashedBubble",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-renderer-backgrounding",
+        "--disable-background-timer-throttling",
+        "--disable-breakpad",
+        "--disable-crash-reporter",
+        "--noerrdialogs",
+        "--no-crash-upload",
+        "--disable-background-mode",
+        "--disable-translate",
+        "--disable-prompt-on-repost",
+        "--disable-domain-reliability",
+        "--metrics-recording-only"
+      ],
+      "ignoreDefaultArgs": [
+        "--disable-extensions"
+      ],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7259 Safari/537.36",
+      "locale": "en-US",
+      "timezoneId": "Asia/Singapore",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      }
+    }
+  },
+  "historyRestored": true,
+  "credentialsRestored": true,
+  "exitCode": 0,
+  "stderr": "",
+  "summary": {
+    "passed": true,
+    "mode": "browser-restore",
+    "platform": "win32",
+    "evidence": "C:\\Users\\ronely\\AppData\\Local\\Temp\\test-finger-ui-1012-XXXXXXpdrEHF"
+  },
+  "launchAliasReleased": true
+}

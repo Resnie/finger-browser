@@ -1,0 +1,69 @@
+{
+  "node": {
+    "passed": 225,
+    "failed": 0
+  },
+  "go": {
+    "passedEventsIncludingSubtests": 558,
+    "packagePassed": 13,
+    "optionalTestsInitiallySkipped": 2,
+    "optionalTestsExplicitlyPassed": 2
+  },
+  "mysqlAcceptanceCategories": 12,
+  "mailProtocolCategories": 13,
+  "fingerprint": {
+    "kernels": ["140.0.7259.2", "144.0.7500.2"],
+    "variantsPerKernel": 6
+  },
+  "portableProfile": {
+    "passed": true,
+    "kernel": "140.0.7259.2",
+    "profileFiles": 43,
+    "restoreKernel": "144.0.7500.2",
+    "restored": [
+      "原生书签",
+      "站点权限",
+      "稳定ID扩展与扩展数据",
+      "禁用扩展不复活",
+      "同URL关闭首标签后重排",
+      "拒绝跨源iframe伪造",
+      "ServiceWorker",
+      "OPFS",
+      "CacheStorage",
+      "独立标签sessionStorage",
+      "真实BrowserInstance bootstrap不污染恢复队列",
+      "清理后不复活",
+      "拒绝内核降级"
+    ]
+  },
+  "windowsInstallerSHA256": "25013e15ea5bc7708ab75ac50cf9e3c37876dbbb6962dac5d7625eae73dfd77b",
+  "windowsCoreSHA256": "37af1891243dda2217e49c5e1cf93b748f749577f3e7bd4c12a0cd464f430648",
+  "windows": {
+    "installerOverwriteExitCode": 0,
+    "cloudTOTP": "passed",
+    "kernelDetection": "passed",
+    "newWindowFirstLaunch": "passed",
+    "fingerprintValues": {
+      "platform": "Win32",
+      "language": "en-US",
+      "timeZone": "Asia/Singapore",
+      "screen": "1366x768",
+      "cpu": 4,
+      "memory": 8,
+      "dnt": "1"
+    },
+    "savedWindowRestore": "failed",
+    "macSavedWindowError": "browserContext.newPage: Protocol error (Target.createTarget): Failed to open a new tab",
+    "newWindowsSavedWindowError": "browserContext.newPage: Target page, context or browser has been closed",
+    "retainedFailureFixture": "test-windows-restore-failure-20261012",
+    "updaterMetadataCheck": "passed; current channel and installed version both 0.2.0",
+    "newVersionAutoInstall": "not verified",
+    "layout": "action button text and clone dialog footer clipped at default scaling"
+  },
+  "externalReadiness": {
+    "macUpdater": "latest-mac.yml HTTP 404",
+    "mailAPI": "ERR_TLS_CERT_ALTNAME_INVALID",
+    "imap": "CERT_HAS_EXPIRED",
+    "pop3": "CERT_HAS_EXPIRED"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "evidence": "/var/folders/bf/208ptzms1sl2qysvl8strctm0000gn/T/test-finger-full-ui-dPXkH7",
+  "username": "test-full-ui-mv5ebdun",
+  "passed": 5,
+  "failed": 2,
+  "results": [
+    {
+      "name": "邮箱注册：未配置服务时禁用入口",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 3425
+    },
+    {
+      "name": "邮箱注册：单独/批量、数量边界、复制结果、部分未保存、错误重试",
+      "kind": "controlled-registration-api; no-external-mailbox-created",
+      "status": "passed",
+      "ms": 7023
+    },
+    {
+      "name": "额度：10个免费账号、批量超额拒绝、删除不返还、重复更新不扣次数",
+      "kind": "real-ui-api",
+      "status": "passed",
+      "ms": 12352
+    },
+    {
+      "name": "分页：数量切换、翻页、跳页、最后一页删除回退",
+      "kind": "real-ui-api; list-fixtures-directly-seeded",
+      "status": "passed",
+      "ms": 1691
+    },
+    {
+      "name": "自动更新：发现版本、进度边界、下载完成、安装失败、错误与监听清理",
+      "kind": "controlled-update-ipc; no-real-update-installation",
+      "status": "passed",
+      "ms": 3865
+    },
+    {
+      "name": "全局更新提示：安装失败应被捕获并向用户说明",
+      "kind": "controlled-install-failure; no-real-update-installation",
+      "status": "failed",
+      "error": "全局安装入口出现未捕获错误: Error invoking remote method 'install-update': Error: test-global-install-failed\n+ actual - expected\n\n+ [Error: Error invoking remote method 'install-update': Error: test-global-install-failed]\n- null\n",
+      "ms": 3862
+    },
+    {
+      "name": "补充操作没有未捕获渲染异常",
+      "kind": "real-ui-api",
+      "status": "failed",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   \"Error invoking remote method 'install-update': Error: test-global-install-failed\"\n+ ]\n- []\n",
+      "ms": 18
+    }
+  ],
+  "rendererErrors": [
+    "Error invoking remote method 'install-update': Error: test-global-install-failed"
+  ],
+  "unexpectedOrigins": []
+}

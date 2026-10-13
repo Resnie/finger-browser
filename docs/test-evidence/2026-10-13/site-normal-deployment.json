@@ -1,0 +1,29 @@
+{
+  "health": {
+    "status": "ok",
+    "service": "fingerprint-lab",
+    "version": 1
+  },
+  "artifactStatus": 404,
+  "proxyFixtureStatus": 404,
+  "testUploadStatus": 404,
+  "mac": {
+    "samples": 45,
+    "uniqueBrowsers": 7,
+    "uniqueSignals": 7,
+    "stable": true
+  },
+  "windows": {
+    "samples": 44,
+    "uniqueBrowsers": 7,
+    "uniqueSignals": 7,
+    "stable": true
+  },
+  "windowsReadOnlySmoke": {
+    "health": "ok",
+    "samples": 44,
+    "uniqueBrowsers": 7,
+    "uniqueSignals": 7,
+    "evidence": "Windows PowerShell via connected RDP after restart"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "name": "fingerbrowser",
+  "private": true,
+  "version": "0.2.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run test:secrets && npm run test:recovery && vite build",
+    "build:local": "node scripts/build-local.mjs",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:win": "npm run build && electron-builder --win",
+    "release": "node scripts/release.mjs",
+    "release:mac": "node scripts/release.mjs --release --platform mac",
+    "release:win": "node scripts/release.mjs --release --platform win",
+    "preview": "vite preview",
+    "test:csp": "node --test scripts/api-origin.test.mjs",
+    "test:feedback": "node --test scripts/error-feedback.test.mjs",
+    "test:secrets": "node --test scripts/check-secrets.test.mjs && node scripts/check-secrets.mjs",
+    "test:browser-runtime": "node --test scripts/browser-account.test.mjs scripts/browser-distribution.test.mjs scripts/browser-edit.test.mjs scripts/browser-lifecycle.test.mjs scripts/browser-session-logout.test.mjs scripts/browser-runtime-lease.test.mjs scripts/browser-runtime-lease-tokens.test.mjs scripts/browser-session-storage-close.test.mjs scripts/browser-startup-pages.test.mjs scripts/browser-storage-state.test.mjs scripts/browser-opfs.test.mjs scripts/fingerprint-injector.test.mjs scripts/history-entries.test.mjs scripts/proxy-probe.test.mjs scripts/socks-proxy-bridge.test.mjs scripts/login-credentials.test.mjs",
+    "test:recovery": "node --test scripts/browser-profile-path.test.mjs scripts/browser-profile-launch-path.test.mjs scripts/browser-recovery-migration.test.mjs scripts/browser-recovery-outbox.test.mjs scripts/browser-recovery-response.test.mjs scripts/browser-table-data.test.mjs scripts/cloud-recovery.test.mjs scripts/browser-portable-profile.test.mjs",
+    "test:billing": "node --test scripts/billing.test.mjs",
+    "test:release": "node --test scripts/release-validation.test.mjs scripts/node-cli.test.mjs scripts/windows-installer.test.mjs",
+    "test:email": "node --test scripts/mail-tls-policy.test.mjs scripts/mail-registration.test.mjs scripts/totp.test.mjs scripts/totp-refresh.test.mjs scripts/verification-code.test.mjs scripts/google-auth-migration.test.mjs scripts/mail-real-acceptance-guard.test.mjs",
+    "test:quality": "npm run test:feedback && npm run test:csp && npm run test:browser-runtime && npm run test:recovery && npm run test:billing && npm run test:email && npm run test:release && npm run test:secrets",
+    "test:ui:all": "node scripts/full-ui-acceptance.mjs",
+    "test:ui:edge": "node scripts/full-ui-acceptance.mjs --edge",
+    "test:browser-matrix": "node scripts/browser-matrix-acceptance.mjs",
+    "test:fingerprint-workers": "node scripts/fingerprint-worker-acceptance.mjs",
+    "fingerprint:lab": "node tools/fingerprint-lab/server.mjs",
+    "test": "npm run test:quality",
+    "format": "prettier --write \"src/**/*.{js,json,vue,css,html}\" \"electron/**/*.{js,json}\""
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.11.0",
+    "electron-store": "^10.1.0",
+    "electron-updater": "^6.6.2",
+    "element-plus": "^2.11.1",
+    "exceljs": "^4.4.0",
+    "imap": "^0.8.19",
+    "mailparser": "^3.9.3",
+    "md5": "^2.3.0",
+    "node-pop3": "^0.11.0",
+    "node-rsa": "^1.1.1",
+    "opentype.js": "2.0.0",
+    "pinia": "^3.0.3",
+    "playwright": "1.55.0",
+    "socks": "2.8.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "electron": "^37.4.0",
+    "electron-builder": "^26.0.12",
+    "prettier": "^3.6.2",
+    "prettier-plugin-vue": "^1.1.6",
+    "vite": "^5.1.6",
+    "vite-plugin-electron": "^0.28.6"
+  },
+  "main": "dist-electron/main/index.js",
+  "build": {
+    "asar": true,
+    "artifactName": "${productName}-Setup-${version}.${ext}",
+    "files": [
+      "dist/**/*",
+      "dist-electron/main/**/*",
+      "dist-electron/preload/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "electron/assets/fingerprint/**/*"
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Resnie",
+        "repo": "finger-browser",
+        "releaseType": "release"
+      }
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": "arm64"
+        },
+        {
+          "target": "zip",
+          "arch": "arm64"
+        }
+      ],
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": "x64"
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "createDesktopShortcut": "always",
+      "allowToChangeInstallationDirectory": false,
+      "deleteAppDataOnUninstall": false,
+      "guid": "fingerbrowser",
+      "include": "electron/installer.nsh"
+    },
+    "directories": {
+      "output": "release/${os}/${version}"
+    }
+  }
+}
