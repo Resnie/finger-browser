@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: dry-run 只检查；release 才构建并上传
+        description: dry-run 检查；build 生成测试包；release 正式发布
         required: true
         default: dry-run
         type: choice
         options:
           - dry-run
+          - build
           - release
       version:
         description: 正式发布时填写已推送的标签，例如 v0.2.1
@@ -42,7 +43,7 @@ jobs:
 
   publish:
     name: 发布 Windows 安装包
-    if: ${{ inputs.action == 'release' }}
+    if: ${{ inputs.action == 'release' || inputs.action == 'build' }}
     needs: check
     runs-on: windows-latest
     permissions:
@@ -50,7 +51,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.version }}
+          ref: ${{ inputs.version || github.ref }}
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
@@ -58,6 +59,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: 构建并上传 GitHub Release
+        if: ${{ inputs.action == 'release' }}
         run: node scripts/release.mjs --release --platform win
         env:
           RELEASE_TAG: ${{ inputs.version }}
@@ -65,3 +67,16 @@ jobs:
           BACKEND_RELEASE_INFO_URL: ${{ vars.BACKEND_RELEASE_INFO_URL || 'https://qt.faayun.com/browser/health' }}
           ELECTRON_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
           ELECTRON_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
+      - name: 构建 Windows 测试包
+        if: ${{ inputs.action == 'build' }}
+        run: node scripts/release.mjs --build --platform win
+      - uses: actions/upload-artifact@v4
+        if: ${{ inputs.action == 'build' }}
+        with:
+          name: windows-candidate
+          path: |
+            release/**/*.exe
+            release/**/*.blockmap
+            release/**/latest.yml
+          if-no-files-found: error
+          retention-days: 7
