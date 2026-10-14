@@ -15,3 +15,11 @@ test('修复保留原应用身份、安装范围和卸载后数据保留策略',
   assert.equal(build.nsis.deleteAppDataOnUninstall, false);
   assert.equal(build.nsis.include, 'electron/installer.nsh');
 });
+
+test('旧版兼容只接受完整 SHA-256，保留目录且不删除档案或终止进程', () => {
+  const script = fs.readFileSync(new URL('../electron/installer-legacy-upgrade.ps1', import.meta.url), 'utf8');
+  assert.match(script, /\$legacyHash = '[0-9a-f]{64}'/);
+  assert.ok(!/\b(?:Remove-Item|Stop-Process|taskkill)\b/i.test(script));
+  assert.match(script, /Directory\]::Move\(\$root, \$backup\)/);
+  assert.match(script, /Directory\]::Move\(\$receipt\.backup, \$root\)/);
+});

@@ -1,3 +1,4 @@
+!include "LogicLib.nsh"
 !define LEGACY_HELPER_SOURCE "${__FILEDIR__}\installer-legacy-upgrade.ps1"
 
 !macro customInit

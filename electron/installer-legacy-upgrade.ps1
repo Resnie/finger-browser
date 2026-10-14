@@ -1,7 +1,7 @@
 # One-time recovery for the published Windows 0.2.0 uninstaller. Never deletes
 # application directories or AppData, and never terminates browser processes.
 $ErrorActionPreference = 'Stop'
-$legacyHash = 'caeeff9b48f38439556fd8f344dfdc4358c4b6267323399deddb21e7f8547c6'
+$legacyHash = 'caeeff9b48f38439556fd8f344dfddc4358c4b6267323399deddb21e7f8547c6'
 $root = [IO.Path]::GetFullPath($env:FINGER_LEGACY_ROOT).TrimEnd('\')
 $expected = [IO.Path]::GetFullPath($env:FINGER_LEGACY_EXPECTED).TrimEnd('\')
 $receiptFile = $env:FINGER_LEGACY_RECEIPT
