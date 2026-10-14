@@ -59,10 +59,17 @@ try {
                 $receipt = ReadReceipt
                 AssertLegacy $receipt.backup
                 $version = (Get-Item -LiteralPath (Join-Path $root 'fingerbrowser.exe')).VersionInfo.ProductVersion
-                if ($version -notmatch '^0\.2\.1(?:\.0)?$') { throw 'New application version not verified' }
+                if ($version -notmatch '^0\.2\.2(?:\.0)?$') { throw 'New application version not verified' }
+                # A restored legacy installation can contain an earlier receipt.
+                # Preserve it, and mark the installation committed only after the
+                # backup receipt has been written successfully.
+                $backupReceipt = Join-Path $receipt.backup 'upgrade-receipt.json'
+                if (Test-Path -LiteralPath $backupReceipt) {
+                    [IO.File]::Move($backupReceipt, (Join-Path $receipt.backup ('upgrade-receipt.previous-' + [Guid]::NewGuid().ToString('N') + '.json')))
+                }
                 $receipt.completed = $true
+                [IO.File]::WriteAllText($backupReceipt, ($receipt | ConvertTo-Json -Depth 8), (New-Object Text.UTF8Encoding($false)))
                 SaveReceipt $receipt
-                [IO.File]::Copy($receiptFile, (Join-Path $receipt.backup 'upgrade-receipt.json'))
             }
         }
         'rollback' {
@@ -71,7 +78,7 @@ try {
                 if (!$receipt.completed -and (Test-Path -LiteralPath $receipt.backup)) {
                     AssertLegacy $receipt.backup
                     if (Test-Path -LiteralPath $root) {
-                        [IO.Directory]::Move($root, ($root + '.failed-0.2.1-' + [Guid]::NewGuid().ToString('N')))
+                        [IO.Directory]::Move($root, ($root + '.failed-0.2.2-' + [Guid]::NewGuid().ToString('N')))
                     }
                     [IO.Directory]::Move($receipt.backup, $root)
                     foreach ($saved in $receipt.registry) {
