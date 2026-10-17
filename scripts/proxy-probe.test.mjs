@@ -59,6 +59,7 @@ const createMockChromium = handler => {
 
   return {
     launchPersistentContext,
+    prepareProfile: async () => {},
     createProfile: async () => '/tmp/mock-proxy-profile',
     removeProfile: async profilePath => removedProfiles.push(profilePath),
     calls,
@@ -72,6 +73,7 @@ const runProbe = (mock, overrides = {}) =>
   probeProxyConnectivity(proxy, {
     launchPersistentContext: mock.launchPersistentContext,
     contextOptions,
+    prepareProfile: async () => {},
     createProfile: mock.createProfile,
     removeProfile: mock.removeProfile,
     targets: jsonTarget,
@@ -92,12 +94,16 @@ test('探测必须使用真实 Chromium 内核和持久化上下文路径', asyn
   assert.equal(mock.calls[0].url.startsWith('https://'), true);
   assert.equal(mock.calls[0].requestOptions.timeout, DEFAULT_PROXY_PROBE_TIMEOUT_MS);
   assert.equal(mock.calls[0].requestOptions.waitUntil, 'domcontentloaded');
-  assert.deepEqual(mock.calls[0].options.proxy, proxy);
+  assert.deepEqual(mock.calls[0].options.proxy, { ...proxy, bypass: '<-loopback>' });
   assert.equal(mock.calls[0].options.executablePath, contextOptions.executablePath);
-  assert.deepEqual(mock.calls[0].options.args, contextOptions.args);
+  assert.ok(mock.calls[0].options.args.includes('--disable-background-networking'));
+  assert.ok(mock.calls[0].options.args.includes('--force-webrtc-ip-handling-policy=disable_non_proxied_udp'));
+  assert.ok(mock.calls[0].options.args.includes('--disable-quic'));
+  assert.ok(mock.calls[0].options.args.includes('--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE proxy.example'));
   assert.equal(mock.calls[0].options.userAgent, contextOptions.userAgent);
   assert.equal(mock.calls[0].options.locale, contextOptions.locale);
   assert.equal(mock.calls[0].options.headless, true);
+  assert.equal(mock.calls[0].options.timeout, DEFAULT_PROXY_PROBE_TIMEOUT_MS);
   assert.equal(mock.calls[0].options.ignoreHTTPSErrors, false);
   assert.equal('storageState' in mock.calls[0].options, false);
   assert.equal(mock.wasContextClosed(), true);
@@ -115,12 +121,13 @@ test('支持无路径的 SOCKS5 代理地址', async () => {
   await probeProxyConnectivity(socksProxy, {
     launchPersistentContext: mock.launchPersistentContext,
     contextOptions,
+    prepareProfile: async () => {},
     createProfile: mock.createProfile,
     removeProfile: mock.removeProfile,
     targets: jsonTarget,
   });
 
-  assert.deepEqual(mock.calls[0].options.proxy, socksProxy);
+  assert.deepEqual(mock.calls[0].options.proxy, { ...socksProxy, bypass: '<-loopback>' });
 });
 
 test('HTTP 407 阻止启动且错误不包含凭据', async () => {
@@ -152,7 +159,7 @@ test('Chromium 返回 ERR_EMPTY_RESPONSE 时阻止启动且不直连回退', asy
     return true;
   });
   assert.equal(mock.calls.length, 1);
-  assert.deepEqual(mock.calls[0].options.proxy, proxy);
+  assert.deepEqual(mock.calls[0].options.proxy, { ...proxy, bypass: '<-loopback>' });
 });
 
 test('探测站返回无效内容时按无有效出口处理', async () => {
@@ -204,7 +211,8 @@ test('临时 Chromium 内核启动失败时清理 profile 并失败关闭', asyn
       },
       contextOptions,
       targets: jsonTarget,
-      createProfile: async () => '/tmp/mock-failed-profile',
+      prepareProfile: async () => {},
+    createProfile: async () => '/tmp/mock-failed-profile',
       removeProfile: async profilePath => removedProfiles.push(profilePath),
     }),
     error => {
@@ -216,6 +224,15 @@ test('临时 Chromium 内核启动失败时清理 profile 并失败关闭', asyn
   );
 
   assert.deepEqual(removedProfiles, ['/tmp/mock-failed-profile']);
+});
+
+test('无法写入原生代理保护时不启动内核，并清理临时档案', async () => {
+  const mock = createMockChromium(async () => { throw new Error('must not navigate'); });
+  await assert.rejects(runProbe(mock, {
+    prepareProfile: async () => { throw new Error('write failed'); },
+  }), error => error.code === 'PROXY_PROBE_UNAVAILABLE');
+  assert.equal(mock.calls.length, 0);
+  assert.deepEqual(mock.removedProfiles, ['/tmp/mock-proxy-profile']);
 });
 
 test('context.close 卡死时有界等待并改用 Browser.close 收口', async () => {
@@ -241,6 +258,7 @@ test('context.close 卡死时有界等待并改用 Browser.close 收口', async 
     contextOptions,
     targets: jsonTarget,
     closeTimeoutMs: 10,
+    prepareProfile: async () => {},
     createProfile: async () => '/tmp/mock-hanging-context',
     removeProfile: async profilePath => removedProfiles.push(profilePath),
   });
@@ -271,6 +289,7 @@ test('探测页关闭卡死时仍会进入有界的 context 收口', async () =>
     contextOptions,
     targets: jsonTarget,
     closeTimeoutMs: 10,
+    prepareProfile: async () => {},
     createProfile: async () => '/tmp/mock-hanging-page',
     removeProfile: async profilePath => removedProfiles.push(profilePath),
   });
@@ -299,7 +318,8 @@ test('上下文和内核都无法关闭时阻止正式窗口启动', async () =>
       contextOptions,
       targets: jsonTarget,
       closeTimeoutMs: 10,
-      createProfile: async () => '/tmp/mock-hanging-browser',
+      prepareProfile: async () => {},
+    createProfile: async () => '/tmp/mock-hanging-browser',
       removeProfile: async profilePath => removedProfiles.push(profilePath),
     }),
     error => error.code === 'PROXY_PROBE_CLEANUP_FAILED'
@@ -335,7 +355,8 @@ test('缺少实际内核路径时禁止用其他网络客户端代替探测', as
     probeProxyConnectivity(proxy, {
       launchPersistentContext: mock.launchPersistentContext,
       contextOptions: {},
-      createProfile: mock.createProfile,
+      prepareProfile: async () => {},
+    createProfile: mock.createProfile,
       removeProfile: mock.removeProfile,
       targets: jsonTarget,
     }),

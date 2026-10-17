@@ -123,7 +123,6 @@
             <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item command="history">浏览历史</el-dropdown-item>
-                <el-dropdown-item command="credentials">密码管理</el-dropdown-item>
                 <el-dropdown-item
                   command="email-code"
                   :disabled="
@@ -185,7 +184,6 @@
     />
   </el-dialog>
   <BrowserHistoryDialog v-model="historyDialogVisible" :instance-id="detailInstanceId" />
-  <CredentialManagerDialog v-model="credentialDialogVisible" :instance-id="detailInstanceId" />
   <BrowserCodeDialog
     v-model="codeDialogVisible"
     :result="codeResult"
@@ -210,7 +208,6 @@
   import { ElMessageBox } from 'element-plus';
   import BrowserCodeDialog from '@/components/BrowserCodeDialog.vue';
   import BrowserHistoryDialog from '@/components/BrowserHistoryDialog.vue';
-  import CredentialManagerDialog from '@/components/CredentialManagerDialog.vue';
 
   const userStore = useUserStore();
   const emailStore = useEmailStore();
@@ -229,7 +226,6 @@
 
   const operationStates = reactive({});
   const historyDialogVisible = ref(false);
-  const credentialDialogVisible = ref(false);
   const detailInstanceId = ref('');
   const runningCodeActions = reactive(new Set());
   const codeDialogVisible = ref(false);
@@ -255,11 +251,10 @@
   };
 
   const handleMoreCommand = async (command, row) => {
-    if (command === 'history' || command === 'credentials') {
+    if (command === 'history') {
       detailInstanceId.value = row.browser_id;
+      historyDialogVisible.value = true;
     }
-    if (command === 'history') historyDialogVisible.value = true;
-    if (command === 'credentials') credentialDialogVisible.value = true;
     if (command === 'email-code') await handleEmailCode(row);
     if (command === 'google-code') await handleGoogleCode(row);
   };

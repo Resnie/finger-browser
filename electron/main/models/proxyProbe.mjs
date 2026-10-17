@@ -3,6 +3,7 @@ import { isIP } from 'node:net';
 import os from 'node:os';
 import path from 'node:path';
 import { closeContextWithTimeout } from './browserLifecycle.mjs';
+import { applyProxyNetworkPolicy, prepareProxyNetworkProfile } from './proxyNetworkPolicy.mjs';
 
 export const DEFAULT_PROXY_PROBE_TIMEOUT_MS = 9000;
 export const DEFAULT_PROXY_PROBE_CLOSE_TIMEOUT_MS = 3000;
@@ -246,15 +247,16 @@ const removeProbeProfile = (removeProfile, profilePath, timeoutMs) =>
     '代理检测临时目录清理超时'
   );
 
-const buildProbeLaunchOptions = (proxyConfig, contextOptions) => {
+const buildProbeLaunchOptions = (proxyConfig, contextOptions, timeoutMs) => {
   const executablePath = contextOptions?.executablePath;
   if (typeof executablePath !== 'string' || !executablePath.trim()) {
     throw new ProxyProbeError('PROXY_PROBE_UNAVAILABLE', '代理检测缺少实际浏览器内核，已阻止启动');
   }
 
-  return {
+  return applyProxyNetworkPolicy({
     executablePath,
     headless: true,
+    timeout: timeoutMs,
     proxy: {
       server: proxyConfig.server,
       ...(proxyConfig.username ? { username: proxyConfig.username } : {}),
@@ -266,7 +268,7 @@ const buildProbeLaunchOptions = (proxyConfig, contextOptions) => {
       ? { userAgent: contextOptions.userAgent }
       : {}),
     ...(typeof contextOptions.locale === 'string' ? { locale: contextOptions.locale } : {}),
-  };
+  }, proxyConfig);
 };
 
 /**
@@ -283,13 +285,15 @@ export const probeProxyConnectivity = async (
     closeTimeoutMs = DEFAULT_PROXY_PROBE_CLOSE_TIMEOUT_MS,
     createProfile = createDefaultProfile,
     removeProfile = removeDefaultProfile,
+    prepareProfile = prepareProxyNetworkProfile,
   } = {}
 ) => {
   assertProxyConfig(proxyConfig);
   if (typeof launchPersistentContext !== 'function') {
     throw new ProxyProbeError('PROXY_PROBE_UNAVAILABLE', '代理检测组件不可用，已阻止启动');
   }
-  if (typeof createProfile !== 'function' || typeof removeProfile !== 'function') {
+  if (typeof createProfile !== 'function' || typeof removeProfile !== 'function' ||
+      typeof prepareProfile !== 'function') {
     throw new ProxyProbeError('PROXY_PROBE_UNAVAILABLE', '代理检测临时目录不可用，已阻止启动');
   }
   if (!Array.isArray(targets) || targets.length === 0) {
@@ -314,11 +318,12 @@ export const probeProxyConnectivity = async (
     }
   }
 
-  const launchOptions = buildProbeLaunchOptions(proxyConfig, contextOptions);
+  const launchOptions = buildProbeLaunchOptions(proxyConfig, contextOptions, timeoutMs);
   let profilePath = '';
   let context;
   try {
     profilePath = await createProfile();
+    await prepareProfile(profilePath, true);
     context = await launchPersistentContext(profilePath, launchOptions);
   } catch {
     if (profilePath) {

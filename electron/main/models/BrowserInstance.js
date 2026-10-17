@@ -15,6 +15,8 @@ import { CredentialManager } from './CredentialManager.js';
 import { normalizeBrowserStorageState } from './browserStorageState.mjs';
 import { probeProxyConnectivity, ProxyProbeError } from './proxyProbe.mjs';
 import { createSocksProxyBridge } from './socksProxyBridge.mjs';
+import { applyProxyNetworkPolicy, prepareProxyNetworkProfile } from './proxyNetworkPolicy.mjs';
+import { parseProxyApiResponse, normalizeProxyApiRequestError, resolveProxyApiRequestUrl, ProxyApiError } from './proxyApi.mjs';
 import { restoreStartupPages } from './startupPageRestore.mjs';
 import {
   BROWSER_LIFECYCLE_ACTIONS,
@@ -372,6 +374,7 @@ export class BrowserInstance {
       }
 
       // 使用 launchPersistentContext 启动浏览器，自动持久化历史记录、密码等数据
+      await prepareProxyNetworkProfile(this.userDataDir, Boolean(contextOptions.proxy));
       this._profileLaunchPath = prepareBrowserProfileLaunchPath(this.userDataDir);
       this._profileProcessStopped = false;
       this.context = await chromium.launchPersistentContext(
@@ -530,7 +533,7 @@ export class BrowserInstance {
       if (!proxyConfig) {
         throw new Error('代理已启用但配置无效或获取失败，已阻止无代理启动');
       }
-      options.proxy = proxyConfig;
+      applyProxyNetworkPolicy(options, proxyConfig);
     }
 
     // 指纹相关的 Playwright 原生配置
@@ -1009,6 +1012,10 @@ export class BrowserInstance {
       }
       return proxyConfig;
     } catch (error) {
+      if (error instanceof ProxyApiError) {
+        this.logger.error(error.message);
+        throw error;
+      }
       this.logger.error(`构建代理配置失败: ${error.message}`);
       return null;
     }
@@ -1021,47 +1028,21 @@ export class BrowserInstance {
    * @returns {Promise<string>} 形如 "host:port" 或 "host:port:user:pass" 的代理串
    */
   async fetchProxyFromApi(apiUrl) {
-    if (!apiUrl) return '';
+    if (!apiUrl) throw new ProxyApiError('PROXY_API_URL', '请填写有效的代理 API 链接');
     try {
-      const parsedUrl = new URL(apiUrl);
-      if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
-        throw new Error('代理 API 仅支持 HTTP/HTTPS');
-      }
-      const resp = await axios.get(apiUrl, {
+      const requestUrl = resolveProxyApiRequestUrl(apiUrl);
+      const resp = await axios.get(requestUrl, {
         timeout: 15000,
         responseType: 'text',
         maxContentLength: 1024 * 1024,
         maxBodyLength: 1024 * 1024,
         maxRedirects: 3,
       });
-      let data = resp.data;
-
-      // JSON 返回：尝试从常见字段中提取 ip/port
-      if (typeof data === 'object' && data !== null) {
-        return this.parseProxyJson(data);
-      }
-
-      const text = String(data).trim();
-      if (!text) return '';
-
-      // 可能返回 JSON 字符串
-      if (text.startsWith('{') || text.startsWith('[')) {
-        try {
-          return this.parseProxyJson(JSON.parse(text));
-        } catch {
-          // 非 JSON，按纯文本处理
-        }
-      }
-
-      // 纯文本：取第一行非空内容
-      const firstLine = text
-        .split(/[\r\n]+/)
-        .map(l => l.trim())
-        .find(l => l.length > 0);
-      return firstLine || '';
+      return parseProxyApiResponse(resp.data, { delimiter: this.config.proxy.delimiter || ':' });
     } catch (error) {
-      this.logger.error(`请求代理 API 失败: ${error.message}`);
-      return '';
+      const safeError = normalizeProxyApiRequestError(error);
+      this.logger.error(safeError.message);
+      throw safeError;
     }
   }
 
@@ -1069,11 +1050,7 @@ export class BrowserInstance {
    * 解析代理 API 的 JSON 返回：成功则返回代理串，失败仅记录不含服务商原始数据的通用错误。
    */
   parseProxyJson(json) {
-    const proxy = this.extractProxyFromJson(json);
-    if (proxy) return proxy;
-    // 不记录服务商原始返回，避免将可能包含的代理账号或密码写入日志。
-    this.logger.error('代理API未返回有效代理');
-    return '';
+    return parseProxyApiResponse(json, { delimiter: this.config.proxy.delimiter || ':' });
   }
 
   /**
@@ -1081,23 +1058,7 @@ export class BrowserInstance {
    * 兼容 {data:[{ip,port}]} / {ip,port} / [{ip,port}] 等常见结构
    */
   extractProxyFromJson(json) {
-    const delimiter = this.config.proxy.delimiter || ':';
-    let node = json;
-    if (Array.isArray(node)) node = node[0];
-    else if (node && Array.isArray(node.data)) node = node.data[0];
-    else if (node && node.data && typeof node.data === 'object') node = node.data;
-
-    if (!node || typeof node !== 'object') return '';
-
-    const host = node.ip || node.host || node.server || node.proxy_ip || '';
-    const port = node.port || node.proxy_port || '';
-    if (!host || !port) return '';
-
-    const user = node.user || node.username || '';
-    const pass = node.pass || node.password || '';
-    const segs = [host, port];
-    if (user && pass) segs.push(user, pass);
-    return segs.join(delimiter);
+    return this.parseProxyJson(json);
   }
 
   /**
@@ -1282,11 +1243,12 @@ export class BrowserInstance {
             snapshot: portableProfile,
             assertStopped: async () => true,
           });
-          reader = await chromium.launchPersistentContext(readerDir, {
+          await prepareProxyNetworkProfile(readerDir, true);
+          reader = await chromium.launchPersistentContext(readerDir, applyProxyNetworkPolicy({
             executablePath: this.browserPath,
             headless: true,
             serviceWorkers: 'block',
-          });
+          }, { server: 'http://127.0.0.1:9' }));
           const origins = new Set(
             [
               ...(this.state?.origins || []).map(entry => entry.origin),

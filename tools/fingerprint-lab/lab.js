@@ -35,7 +35,8 @@ async function refresh() {
     cell(tr, `${kernel(sample.identity)} · ${sample.identity.platform}`);
     cell(tr, sample.componentHashes.canvas.slice(0, 16));
     cell(tr, sample.componentHashes.audio.slice(0, 16));
-    cell(tr, sample.request.proxy || '直连 / 未标记');
+    const peer = sample.request.peer || '未知';
+    cell(tr, sample.request.proxy ? `${peer} / 测试标记：${sample.request.proxy}` : peer);
     $('samples').append(tr);
   }
   return result;

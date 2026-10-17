@@ -1,7 +1,7 @@
 {
   "name": "fingerbrowser",
   "private": true,
-  "version": "0.2.2",
+  "version": "0.2.3",
   "scripts": {
     "dev": "vite",
     "build": "npm run test:secrets && npm run test:recovery && vite build",
@@ -13,9 +13,9 @@
     "release:win": "node scripts/release.mjs --release --platform win",
     "preview": "vite preview",
     "test:csp": "node --test scripts/api-origin.test.mjs",
-    "test:feedback": "node --test scripts/error-feedback.test.mjs",
+    "test:feedback": "node --test scripts/error-feedback.test.mjs scripts/proxy-api.test.mjs",
     "test:secrets": "node --test scripts/check-secrets.test.mjs && node scripts/check-secrets.mjs",
-    "test:browser-runtime": "node --test scripts/browser-account.test.mjs scripts/browser-distribution.test.mjs scripts/browser-edit.test.mjs scripts/browser-lifecycle.test.mjs scripts/browser-session-logout.test.mjs scripts/browser-runtime-lease.test.mjs scripts/browser-runtime-lease-tokens.test.mjs scripts/browser-session-storage-close.test.mjs scripts/browser-startup-pages.test.mjs scripts/browser-storage-state.test.mjs scripts/browser-opfs.test.mjs scripts/fingerprint-injector.test.mjs scripts/history-entries.test.mjs scripts/proxy-probe.test.mjs scripts/socks-proxy-bridge.test.mjs scripts/login-credentials.test.mjs",
+    "test:browser-runtime": "node --test scripts/browser-account.test.mjs scripts/browser-distribution.test.mjs scripts/browser-edit.test.mjs scripts/browser-lifecycle.test.mjs scripts/browser-session-logout.test.mjs scripts/browser-runtime-lease.test.mjs scripts/browser-runtime-lease-tokens.test.mjs scripts/browser-session-storage-close.test.mjs scripts/browser-startup-pages.test.mjs scripts/browser-storage-state.test.mjs scripts/browser-opfs.test.mjs scripts/fingerprint-injector.test.mjs scripts/history-entries.test.mjs scripts/proxy-probe.test.mjs scripts/proxy-network-policy.test.mjs scripts/socks-proxy-bridge.test.mjs scripts/login-credentials.test.mjs",
     "test:recovery": "node --test scripts/browser-profile-path.test.mjs scripts/browser-profile-launch-path.test.mjs scripts/browser-recovery-migration.test.mjs scripts/browser-recovery-outbox.test.mjs scripts/browser-recovery-response.test.mjs scripts/browser-table-data.test.mjs scripts/cloud-recovery.test.mjs scripts/browser-portable-profile.test.mjs",
     "test:billing": "node --test scripts/billing.test.mjs",
     "test:release": "node --test scripts/release-validation.test.mjs scripts/node-cli.test.mjs scripts/windows-installer.test.mjs",

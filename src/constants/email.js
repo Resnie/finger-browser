@@ -20,8 +20,8 @@ export const EMAIL_SERVER_MAP = {
     pop3: { host: 'outlook.office365.com', port: 995, tls: true },
   },
   'outlook.top': {
-    imap: { host: 'mail.outlook.top', port: 993, tls: true, verifyCertificate: false },
-    pop3: { host: 'mail.outlook.top', port: 995, tls: true, verifyCertificate: false },
+    imap: { host: 'mail.outlook.top', port: 993, tls: true },
+    pop3: { host: 'mail.outlook.top', port: 995, tls: true },
   },
   'yahoo.com': {
     imap: { host: 'imap.mail.yahoo.com', port: 993, tls: true },

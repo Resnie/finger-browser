@@ -1217,7 +1217,7 @@ try {
       },
       'real-ui-api-chromium-headless'
     );
-    await test('浏览器：历史显示/搜索/清空取消与确认、凭据增改/删除', async () => {
+    await test('浏览器：历史显示/搜索/清空、密码入口隐藏与保留凭据接口', async () => {
       const r = row(names.browser).filter({ hasNotText: '副本' });
       const more = async name => {
         await button('更多', r).hover();
@@ -1252,18 +1252,18 @@ try {
         browser.browser_id
       );
       assert.equal(saved.length, 1);
-      await more('密码管理');
-      const d = dialog('密码管理');
-      await seen('test-web-user', d);
-      assert.ok(!(await d.innerText()).includes('test-updated-pass'));
-      await button('删除', d).click();
-      await confirm('取消');
-      await seen('test-web-user', d);
-      await button('删除', d).click();
-      await confirm('确定删除');
-      await seen('暂无已保存的密码', d);
-      await button('关闭', d).click();
-      await absent(d);
+      await button('更多', r).hover();
+      assert.equal(await page.getByRole('menuitem', { name: '密码管理', exact: true }).count(), 0);
+      await page.keyboard.press('Escape');
+      await page.evaluate(
+        id => window.ipcRenderer.deleteCredential(id, '127.0.0.1', 'test-web-user'),
+        browser.browser_id
+      );
+      const remaining = await page.evaluate(
+        id => window.ipcRenderer.getSavedCredentials(id),
+        browser.browser_id
+      );
+      assert.equal(remaining.length, 0);
     });
     await test(
       '浏览器：关联账号谷歌码与邮箱验证码快捷入口',
@@ -1405,9 +1405,10 @@ try {
         return { observations };
       }
     );
-    await test('余额账单：真实余额/免费次数、刷新、无充值入口', async () => {
+    await test('余额账单：真实余额/免费次数、刷新、未配置时无充值入口', async () => {
       await nav('余额与账单');
-      await seen('USDT 链充值暂未开放');
+      await seen('本页暂不提供充值操作。');
+      assert.equal(await button('充值').count(), 0);
       await seen('账单明细');
       const summary = await api('/billing/summary');
       assert.ok(summary);
