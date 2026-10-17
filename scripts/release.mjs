@@ -185,6 +185,18 @@ if (action === 'release') {
   const headTags = run('git', ['tag', '--points-at', 'HEAD'], { capture: true }).split('\n');
   if (!headTags.includes(expectedTag)) fail(`当前提交没有标签 ${expectedTag}`);
 
+  const tagRef = `refs/tags/${expectedTag}`;
+  if (run('git', ['cat-file', '-t', tagRef], { capture: true }) === 'tag') {
+    const tagMessage = run(
+      'git',
+      ['for-each-ref', '--format=%(contents:subject)%0a%(contents:body)', tagRef],
+      { capture: true }
+    );
+    if (!['', expectedTag, packageJson.version].includes(tagMessage)) {
+      fail(`版本标签注释只能保留版本号 ${expectedTag}，不得填写简介`);
+    }
+  }
+
   const publishToken = process.env.ELECTRON_BUILDER_GH_TOKEN || process.env.GH_TOKEN;
   if (!publishToken) fail('缺少 GitHub 发布令牌环境变量');
   await checkBackendCompatibility(compatibility);

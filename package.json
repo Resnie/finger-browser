@@ -112,6 +112,9 @@
     },
     "directories": {
       "output": "release/${os}/${version}"
+    },
+    "releaseInfo": {
+      "releaseNotes": ""
     }
   }
 }

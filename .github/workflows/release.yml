@@ -80,3 +80,11 @@ jobs:
             release/**/latest.yml
           if-no-files-found: error
           retention-days: 7
+
+  metadata:
+    name: 核验版本标题、简介和标签注释
+    if: ${{ inputs.action == 'release' }}
+    needs: publish
+    permissions:
+      contents: write
+    uses: ./.github/workflows/release-metadata.yml
